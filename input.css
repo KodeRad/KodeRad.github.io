@@ -1,26 +1,56 @@
 body {
-  background-color: rgb(63, 63, 63);
+  background-color: rgb(40, 40, 40);
+}
+
+.container {
+  display: flex;
+}
+
+.menu {
+  background-color: rgb(28, 28, 28);
+  border-radius: 10px;
+  width: 180px;
+  height: 900px;
+}
+
+.logo,
+.welcome__name {
+  flex: 1;
 }
 
 .logo {
-  width: 140px;
+  width: 170px;
   height: auto;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 5px;
+  margin-top: 15px;
 }
 
 .welcome__name {
   width: 600px;
   height: auto;
-  margin-left: 200px;
-  margin-top: 20px;
+  margin-left: 100px;
+  margin-top: 10px;
+  color: whitesmoke;
 }
 
 .subtitle__welcome {
-  color: whitesmoke;
   width: 600px;
-  height: auto;
-  margin-left: 150px;
-  margin-top: 20px;
   padding-left: 300px;
+  font: inherit;
+  font-size: x-large;
+}
+
+.nav__obj {
+  list-style: none;
+}
+
+.nav__button {
+  border: none;
+  font: inherit;
+  border-radius: 10px;
+  color: whitesmoke;
+  background-color: rgb(20, 20, 20);
+  width: 180px;
+  margin-left: -40px;
+  margin-bottom: 15px;
 }
