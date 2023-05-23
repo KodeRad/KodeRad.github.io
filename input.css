@@ -17,6 +17,7 @@ body {
 }
 
 .subtitle__welcome {
+  color: whitesmoke;
   width: 600px;
   height: auto;
   margin-left: 150px;
