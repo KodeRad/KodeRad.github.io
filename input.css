@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(63, 63, 63);
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.welcome__name {
+  width: 600px;
+  height: auto;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+.subtitle__welcome {
+  margin-left: 600px;
+}
