@@ -11,7 +11,7 @@ body {
   background-color: rgb(28, 28, 28);
   border-radius: 10px;
   width: 180px;
-  height: 900px;
+  height: 100vh;
 }
 
 .logo,
@@ -24,21 +24,6 @@ body {
   height: auto;
   margin-left: 5px;
   margin-top: 15px;
-}
-
-.welcome {
-  width: 600px;
-  height: auto;
-  margin-left: 100px;
-  margin-top: 10px;
-  color: whitesmoke;
-}
-
-.title__welcome {
-  width: 600px;
-  padding-left: 300px;
-  font: inherit;
-  font-size: x-large;
 }
 
 .nav__obj {
@@ -56,6 +41,21 @@ body {
   margin-bottom: 15px;
 }
 
+.welcome {
+  width: 600px;
+  height: auto;
+  margin-left: 100px;
+  margin-top: 10px;
+  color: whitesmoke;
+}
+
+.title__welcome {
+  width: 600px;
+  padding-left: 300px;
+  font: inherit;
+  font-size: x-large;
+}
+
 .paragraph__welcome {
   margin-top: 100px;
   font: inherit;
@@ -70,10 +70,55 @@ body {
 }
 
 @media (max-width: 768px) {
+  .menu {
+    background-color: rgb(28, 28, 28);
+    border-radius: 10px;
+    width: 60px;
+    height: 100vh;
+  }
+  .logo {
+    width: 50px;
+    height: auto;
+    margin-left: 5px;
+    margin-top: 15px;
+  }
+  .nav__button {
+    /* border: none; */
+    font: inherit;
+    font-size: 8px;
+    border-radius: 10px;
+    color: whitesmoke;
+    background-color: rgb(20, 20, 20);
+    width: 60px;
+    margin-left: -40px;
+    margin-bottom: 15px;
+  }
+
+  .welcome {
+    width: 120px;
+    height: auto;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: whitesmoke;
+  }
+
+  .title__welcome {
+    width: 120px;
+    padding-left: 70px;
+    font: inherit;
+    font-size: 6px;
+  }
+
+  .paragraph__welcome {
+    margin-top: 20px;
+    font: inherit;
+    font-size: 4px;
+  }
+
   .myphoto__img {
     position: absolute;
     margin-left: 100px;
-    margin-top: -50px;
+    margin-top: -30px;
     width: 50px;
     height: auto;
   }
