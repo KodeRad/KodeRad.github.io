@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,39 +11,38 @@
     />
 
     <link rel="stylesheet" href="/input.css" />
-
+    <script type="module" src="/script.js"></script>
     <title></title>
   </head>
 
   <body>
-    <div class="container">
-      <div class="menu">
+    <header class="header">
+      <nav class="nav">
         <img src="/src/Logo.png" alt="KK" class="logo" />
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__obj">
-              <button class="nav__button about__btn">
-                <p>About</p>
-              </button>
-            </li>
-            <li class="nav__obj">
-              <button class="nav__button my__skills__btn">
-                <p>My skills</p>
-              </button>
-            </li>
-            <li class="nav__obj">
-              <button class="nav__button projects__btn">
-                <p>Projects</p>
-              </button>
-            </li>
-            <li class="nav__obj">
-              <button class="nav__button contact__btn">
-                <p>Contact</p>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <ul class="nav__list">
+          <li class="nav__obj">
+            <button class="nav__button about__btn">
+              <p>About</p>
+            </button>
+          </li>
+          <li class="nav__obj">
+            <button class="nav__button my__skills__btn">
+              <p>My skills</p>
+            </button>
+          </li>
+          <li class="nav__obj">
+            <button class="nav__button projects__btn">
+              <p>Projects</p>
+            </button>
+          </li>
+          <li class="nav__obj">
+            <button class="nav__button contact__btn">
+              <p>Contact</p>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
       <div class="main">
         <div class="welcome welcome__page">
           <img
@@ -60,8 +61,61 @@
             alt="KONRAD KRASOCKI"
             class="welcome myphoto__img"
           />
+          <div class="map" id="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1282040.5182734604!2d15.673493111280003!3d51.1271775696389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9c2d4b58abf%3A0xb70956aec205e0f5!2zV3JvY8WCYXc!5e0!3m2!1sen!2spl!4v1685013981068!5m2!1sen!2spl"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
+    <script>
+      ((g) => {
+        var h,
+          a,
+          k,
+          p = "The Google Maps JavaScript API",
+          c = "google",
+          l = "importLibrary",
+          q = "__ib__",
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement("script"));
+              e.set("libraries", [...r] + "");
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set("callback", c + ".maps." + q);
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + " could not load.")));
+              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+              m.head.append(a);
+            }));
+        d[l]
+          ? console.warn(p + " only loads once. Ignoring:", g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({
+        key: "AIzaSyAeo0hFt_sHfXeal19psu_VkPTRWv_JCF4",
+        v: "weekly",
+        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+        // Add other bootstrap parameters as needed, using camel case.
+      });
+    </script>
   </body>
 </html>
