@@ -5,56 +5,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
-      rel="stylesheet"
-    />
+    <link rel="shortcut icon" type="image/png" href="src/Logo.png" />
 
-    <link rel="stylesheet" href="/input.css" />
-    <script type="module" src="/script.js"></script>
-    <title></title>
+    <link rel="stylesheet" href="/style.css" />
+    <script defer type="module" src="/script.js"></script>
+    <title>KodeRad Web Development</title>
   </head>
 
   <body>
     <header class="header">
       <nav class="nav">
-        <img src="/src/Logo.png" alt="KK" class="logo" />
-        <ul class="nav__list">
-          <li class="nav__obj">
-            <button class="nav__button about__btn">
-              <p>About</p>
-            </button>
+        <img src="/src/Logo.png" alt="KK" class="nav__logo" />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1"> About </a>
           </li>
-          <li class="nav__obj">
-            <button class="nav__button my__skills__btn">
-              <p>My skills</p>
-            </button>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2"> My skills </a>
           </li>
-          <li class="nav__obj">
-            <button class="nav__button projects__btn">
-              <p>Projects</p>
-            </button>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3"> Projects </a>
           </li>
-          <li class="nav__obj">
-            <button class="nav__button contact__btn">
-              <p>Contact</p>
-            </button>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--4"> Contact </a>
           </li>
         </ul>
       </nav>
 
-      <div class="main">
+      <div class="header__title">
         <div class="welcome welcome__page">
           <img
             src="/src/Name.png"
             alt="KONRAD KRASOCKI"
             class="welcome name__img"
           />
-          <h1 class="title__welcome">Front End Web Developer</h1>
+          <h1 class="title__welcome">Front End Developer</h1>
           <p class="welcome paragraph__welcome">
-            I'm Front End Web Developer based in Wrocław, Poland. <br />
+            "I'm Front End Web Developer based in Wrocław, Poland. <br />
             I'm inspired by change and I believe programming is the <br />
-            most changing business there is.
+            most changing business there is."
           </p>
           <img
             src="/src/myPhoto.png"
@@ -72,9 +61,20 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <img src="/src/scrollDown2.png" class="scroll" />
+          <img src="/src/scrollDown2.png" class="scroll__img" />
         </div>
       </div>
     </header>
+
+    <section class="section" id="section__1">
+      <div class="section__title">My Skills</div>
+      <h2 class="section description">My Skills</h2>
+      <h3 class="section__header">
+        "I have spent hundreds of hours learning mainly JavaScript along with
+        html and CSS. Thanks to that commitment I believe I might bring a lot to
+        the table if we ever met business-wise"
+      </h3>
+      <img src="src/HTML_CSS_JS.png" class="skills__img" />
+    </section>
   </body>
 </html>
