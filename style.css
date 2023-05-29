@@ -19,27 +19,35 @@ body {
   padding: 0;
 }
 
+.background {
+  background-image: url(/src/codeBackground2.jpg);
+  background-position: center;
+  /* background-size: auto; */
+  background-size: cover;
+}
+
+.wrapper__main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 .header {
   border-top: 1px solid transparent;
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background-image: url(/src/codeBackground2.jpg);
-  background-position: center;
-  /*  background-size: auto; */
-  background-size: cover;
 }
 
 /* NAVIGATION */
 .nav {
-  position: fixed;
+  /* position: fixed; */
   /* position: absolute; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(28, 28, 28, 0.95);
   border-radius: 10px;
-  width: 98%;
+  width: 99%;
   height: 5rem;
   margin-top: 25px;
   margin-left: 15px;
@@ -74,48 +82,63 @@ body {
   text-decoration: none;
 }
 
-.welcome {
-  width: 600px;
+/* HOME PAGE */
+
+.welcome__name {
+  width: 40rem;
   height: auto;
   margin-left: 30px;
-  margin-top: 100px;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .title__welcome {
   padding-left: 20rem;
   font: inherit;
   font-size: x-large;
-}
-
-.paragraph__welcome {
-  margin-top: 70px;
-  font: inherit;
+  margin-bottom: 5rem;
 }
 
 .myphoto__img {
   border-radius: 20px;
   position: absolute;
-  margin-left: 430px;
-  margin-top: -203.5px;
-  width: 400px;
+  margin-left: 38rem;
+  margin-top: -26rem;
+  width: 35rem;
   height: auto;
 }
 
-.map {
+.paragraph__welcome {
+  height: 16rem;
   position: absolute;
+  margin-left: 32.5rem;
+  margin-top: 7rem;
+  font: inherit;
+  font-size: xx-large;
+  background-color: rgb(40, 40, 40, 0.9);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px;
+}
+
+.map {
   display: flex;
   overflow: hidden;
-  border-radius: 30px;
-  margin-left: 890px;
-  margin-top: -410px;
-  /* width: 450px;
-  height: 500px; */
-  border-radius: 10px;
+  border-radius: 20px;
+  margin-left: 0px;
+  margin-top: 2rem;
+}
+
+.map .map-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .scroll__img {
   margin-top: 60px;
-  width: 1360px;
+  margin-left: -28px;
+  width: 1200px;
   height: auto;
 }
 
@@ -131,6 +154,8 @@ body {
   opacity: 0;
   transform: translateY(8rem);
 }
+
+/* <600px, 601px, 768px, 992px, 1200px */
 
 @media (max-width: 768px) {
   .header {
