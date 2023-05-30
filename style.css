@@ -311,6 +311,13 @@ body {
 /* <600px, 601px, 768px, 992px, 1200px */
 
 @media (max-width: 768px) {
+  .background {
+    background-image: url(/src/codeBackground2.jpg);
+    background-position: right top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   .wrapper__main {
     width: 100vh;
     margin: 0 auto;
