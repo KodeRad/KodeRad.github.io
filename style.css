@@ -26,7 +26,6 @@ body {
 .header {
   border-top: 1px solid transparent;
   position: relative;
-  min-height: 100vh;
   width: 100%;
 }
 
@@ -86,7 +85,15 @@ body {
   margin-bottom: 2rem;
 }
 
-.title__welcome {
+.name__img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+.name__img__description {
   padding-left: 20rem;
   font: inherit;
   font-size: x-large;
@@ -299,14 +306,6 @@ body {
 /* <600px, 601px, 768px, 992px, 1200px */
 
 @media (max-width: 768px) {
-  .background {
-    background-image: url(/src/codeBackground2.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-
   .wrapper__main {
     width: 100vh;
     margin: 0 auto;
@@ -315,7 +314,6 @@ body {
   .header {
     border-top: 1px solid transparent;
     position: relative;
-    min-height: 100vh;
     width: 100%;
   }
 
@@ -331,13 +329,12 @@ body {
   .nav__logo {
     width: 20%;
     height: auto;
-    margin-left: 110px;
     align-self: center;
     margin-top: 0px;
   }
 
   .nav__links {
-    display: none;
+    padding: 0 -2rem;
   }
 
   .nav__link {
@@ -347,7 +344,7 @@ body {
     text-decoration: none;
   }
 
-  /* SECTION 1 - HOME PAGE */
+  /* SECTION 1 - HOME */
 
   .welcome__name {
     width: 90%;
@@ -357,8 +354,8 @@ body {
     margin-bottom: 2rem;
   }
 
-  .title__welcome {
-    padding-left: 4rem;
+  .name__img__description {
+    padding-left: 24rem;
     font: inherit;
     font-size: x-large;
     margin-bottom: 5rem;
@@ -367,13 +364,17 @@ body {
   .myphoto__img {
     position: relative;
     width: 100vh;
-    margin-left: 0px;
     height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
   }
 
   .paragraph__welcome {
-    height: 33vh;
-    position: relative;
+    width: 50vh;
+    height: auto;
+    position: absolute;
+    margin-left: 0rem;
+    margin-top: 5rem;
     z-index: 99;
   }
 
