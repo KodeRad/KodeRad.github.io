@@ -312,7 +312,7 @@ body {
 
 @media (max-width: 768px) {
   .wrapper__main {
-    width: 100%;
+    width: 100vh;
     margin: 0 auto;
   }
 
@@ -324,20 +324,6 @@ body {
   }
 
   /* NAVIGATION */
-  .nav {
-    /* position: fixed; */
-    /* position: absolute; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(28, 28, 28, 0.95);
-    border-radius: 10px;
-    width: 99%;
-    height: 5rem;
-    margin-top: 25px;
-    margin-left: 15px;
-    z-index: 100;
-  }
 
   .nav.sticky {
     position: fixed;
@@ -347,19 +333,15 @@ body {
   }
 
   .nav__logo {
-    width: 40%;
+    width: 20%;
     height: auto;
+    margin-left: 110px;
     align-self: center;
     margin-top: 0px;
   }
 
   .nav__links {
     display: none;
-    align-items: center;
-    list-style: none;
-    /* background: none;
-    font: inherit; */
-    padding: 0 4rem;
   }
 
   .nav__link {
@@ -372,49 +354,35 @@ body {
   /* SECTION 1 - HOME PAGE */
 
   .welcome__name {
-    width: 40rem;
+    width: 90%;
     height: auto;
-    margin-left: 30px;
+    margin-left: 20px;
     margin-top: 3rem;
     margin-bottom: 2rem;
   }
 
   .title__welcome {
-    padding-left: 20rem;
+    padding-left: 4rem;
     font: inherit;
     font-size: x-large;
     margin-bottom: 5rem;
   }
 
   .myphoto__img {
-    border-radius: 20px;
-    position: absolute;
-    margin-left: 38rem;
-    margin-top: -26rem;
-    width: 35rem;
+    position: relative;
+    width: 100vh;
+    margin-left: 0px;
     height: auto;
   }
 
   .paragraph__welcome {
-    height: 16rem;
-    position: absolute;
-    margin-left: 32.5rem;
-    margin-top: 7rem;
-    font: inherit;
-    font-size: xx-large;
-    background-color: rgb(40, 40, 40, 0.7);
-    border-radius: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 20px;
+    height: 33vh;
+    position: relative;
+    z-index: 99;
   }
 
   .map {
-    display: flex;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-left: 0px;
-    margin-top: 2rem;
+    margin-left: 190px;
   }
 
   .map .map-wrapper {
@@ -425,7 +393,7 @@ body {
   .scroll__img {
     margin-top: 60px;
     margin-left: -28px;
-    width: 1200px;
+    width: 100vh;
     height: auto;
   }
 
@@ -458,7 +426,7 @@ body {
   }
 
   .skills__imgs {
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5rem;
@@ -466,13 +434,15 @@ body {
   }
 
   .skills__img {
-    width: 800px;
+    width: 70vh;
     align-self: center;
     height: auto;
   }
 
   .toggl__img {
-    width: 300px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    width: 23vh;
     align-self: center;
     height: auto;
   }
@@ -487,7 +457,7 @@ body {
   /* SECTION 3 - MY PROJECTS */
 
   .projects {
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5rem;
@@ -496,7 +466,7 @@ body {
   }
 
   .projects__links {
-    display: flex;
+    display: block;
     list-style: none;
     font: inherit;
   }
