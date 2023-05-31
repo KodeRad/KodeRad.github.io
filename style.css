@@ -334,7 +334,7 @@ body {
   }
 
   .nav__links {
-    padding: 0 -2rem;
+    padding: 0 2rem;
   }
 
   .nav__link {
@@ -356,9 +356,6 @@ body {
 
   .name__img__description {
     padding-left: 24rem;
-    font: inherit;
-    font-size: x-large;
-    margin-bottom: 5rem;
   }
 
   .myphoto__img {
@@ -382,125 +379,60 @@ body {
     margin-left: 190px;
   }
 
-  .map .map-wrapper {
-    border-radius: 20px;
-    overflow: hidden;
-  }
-
   .scroll__img {
-    margin-top: 60px;
-    margin-left: -28px;
+    margin-left: -10px;
     width: 100vh;
-    height: auto;
   }
 
   /* SECTIONS - GENERAL ITEMS */
-
-  .section {
-    justify-content: space-between;
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 13rem;
-  }
-
-  .section__title {
-    font: inherit, bold;
-    font-size: 50px;
-    padding-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .section__description {
-    font: inherit;
-    font-size: 30px;
-    margin-bottom: 5rem;
-  }
+  /* no changes */
 
   /* SECTION 2 - MY SKILLS */
 
-  .section__skills {
-    margin-top: 3rem;
-  }
-
   .skills__imgs {
     display: block;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5rem;
-    padding: 0 2rem;
   }
 
   .skills__img {
     width: 70vh;
-    align-self: center;
-    height: auto;
   }
 
   .toggl__img {
     margin-top: 2rem;
     margin-left: 1rem;
     width: 23vh;
-    align-self: center;
-    height: auto;
-  }
-
-  .section__description__second {
-    font: inherit;
-    font-size: 30px;
-    margin-bottom: 5rem;
-    padding-bottom: 2rem;
   }
 
   /* SECTION 3 - MY PROJECTS */
 
   .projects {
     display: block;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5rem;
-    padding: 0 2rem;
-    font: inherit;
   }
 
   .projects__links {
     display: block;
-    list-style: none;
-    font: inherit;
-  }
-
-  .project__link {
-    text-decoration: none;
-    /* font: inherit; */
-  }
-
-  .project__item {
-    margin-left: 5rem;
-    text-transform: uppercase;
-    color: inherit;
-    text-decoration: none;
-    font: inherit;
-  }
-
-  .project__title {
-    font: inherit;
-    font-size: 20px;
-    margin-bottom: 1rem;
-  }
-
-  .project__img {
-    height: 300px;
-    width: auto;
-    align-self: center;
   }
 
   /* SECTION 4 - CONTACT */
 
   .contact__item img {
-    padding-left: 7rem;
-    text-transform: uppercase;
-    color: inherit;
-    text-decoration: none;
-    font: inherit;
+    padding-left: 0rem;
+  }
+
+  .linkedin__logo {
+    width: 45%;
+    height: auto;
+    align-self: center;
+  }
+
+  .gmail__logo {
+    width: 50%;
+    height: auto;
+    align-self: center;
+  }
+
+  .contact_title {
+    margin-top: 3rem;
   }
 
   /* FOOTER */
