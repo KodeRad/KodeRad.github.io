@@ -319,22 +319,14 @@ body {
 
   /* NAVIGATION */
 
-  .nav.sticky {
-    position: fixed;
-    width: 85%;
-    margin-left: -5px;
-    background-color: rgba(28, 28, 28, 0.95);
-  }
-
   .nav__logo {
     width: 20%;
-    height: auto;
-    align-self: center;
-    margin-top: 0px;
+    margin-left: 0px;
   }
 
   .nav__links {
-    padding: 0 2rem;
+    padding: 0 0rem;
+    margin: 0 auto;
   }
 
   .nav__link {
