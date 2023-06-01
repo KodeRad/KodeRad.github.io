@@ -15,21 +15,21 @@
   <body>
     <div class="background">
       <div class="wrapper__main">
-        <header class="header" id="home">
-          <nav class="nav">
-            <img src="/src/Logo.png" alt="KK" class="nav__logo" />
+        <header class="header" id="section--1">
+          <nav class="nav menu">
+            <img src="/src/Logo.png" alt="KK" class="nav__logo fade__out" />
             <ul class="nav__links">
               <li class="nav__item">
-                <a class="nav__link" href="#section--1"> Home </a>
+                <a class="nav__link fade__out" href="#section--1"> Home </a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#section--2"> Skills </a>
+                <a class="nav__link fade__out" href="#section--2"> Skills </a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#section--3"> Projects </a>
+                <a class="nav__link fade__out" href="#section--3"> Projects </a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#section--4"> Contact </a>
+                <a class="nav__link fade__out" href="#section--4"> Contact </a>
               </li>
             </ul>
           </nav>
@@ -54,7 +54,7 @@
                 class="welcome myphoto__img"
               />
               <div class="map" id="map">
-                <div class="map-wrapper">
+                <div class="map__wrapper">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1282040.5182734604!2d15.673493111280003!3d51.1271775696389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9c2d4b58abf%3A0xb70956aec205e0f5!2zV3JvY8WCYXc!5e0!3m2!1sen!2spl!4v1685013981068!5m2!1sen!2spl"
                     width="450"
@@ -172,15 +172,25 @@
           </h3>
         </section>
         <!-- FOOTER -->
-        <footer class="footer">
+        <footer class="footer menu">
           <div class="footer__content">
-            <img src="/src/Logo.png" alt="KK" class="footer__logo" />
-            <p class="footer__para">&copy; 2023 Konrad Krasocki</p>
+            <img src="/src/Logo.png" alt="KK" class="footer__logo fade__out" />
+            <p class="footer__para fade__out">&copy; 2023 Konrad Krasocki</p>
             <nav class="footer__nav">
               <ul class="footer__nav__list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#section--2">My Skills</a></li>
-                <li><a href="#section--3">Projects</a></li>
+                <li>
+                  <a class="footer__link fade__out" href="#section--1">Home</a>
+                </li>
+                <li>
+                  <a class="footer__link fade__out" href="#section--2"
+                    >My Skills</a
+                  >
+                </li>
+                <li>
+                  <a class="footer__link fade__out" href="#section--3"
+                    >Projects</a
+                  >
+                </li>
               </ul>
             </nav>
           </div>
