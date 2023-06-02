@@ -1,5 +1,3 @@
-console.log("Hello World");
-
 // Selectors:
 
 // Setions:
@@ -70,12 +68,10 @@ menus.forEach((menu) => {
 const stickyNav = function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      console.log("sticky");
       nav.classList.add("sticky");
       scrollDownImg.style.opacity = 0;
     }
     if (entry.isIntersecting) {
-      console.log("not sticky icky");
       nav.classList.remove("sticky");
       scrollDownImg.style.opacity = 1;
     }
@@ -90,5 +86,23 @@ const section1Observer = new IntersectionObserver(stickyNav, {
 });
 section1Observer.observe(section1);
 
-// scroll down fade out
-// sticky nav fades in
+// Toggl API Clock
+
+/* API: f4d69d308e97e4bf700051591f16876f
+TOGGL: Content-Type: application/json  */
+
+const apiToken = "f4d69d308e97e4bf700051591f16876f";
+
+async function getTimeLearning(apiToken) {
+  const response = await fetch("https://api.track.toggl.com/api/v9/me/cors", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+  return data.data;
+}
+
+getTimeLearning(apiToken);
