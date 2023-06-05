@@ -14,6 +14,8 @@ const footerLinks = document.querySelector(".footer__nav__list");
 const menus = document.querySelectorAll(".menu");
 
 // Others selectors:
+const allElements = document.querySelector("*");
+
 const scrollDownImg = document.querySelector(".scroll__img");
 
 // Navbars
@@ -86,12 +88,51 @@ const section1Observer = new IntersectionObserver(stickyNav, {
 });
 section1Observer.observe(section1);
 
+// Reveling sections
+// 1. section observer
+// 2. for each section reveal current section
+
+const allSections = document.querySelectorAll(".section");
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+
+  /*   if (document.querySelectorAll(".section--hidden")) {
+    console.log("test");
+    allElements.style.scrollMargin = "15rem";
+  }
+
+  if (!document.querySelectorAll(".section--hidden")) {
+    allElements.style.scrollMargin = "8rem";
+  }
+ */
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section--hidden");
+
+  observer.unobserve(entry.target);
+};
+
+const sectionAllObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.1,
+  rootMargin: "0px",
+});
+
+allSections.forEach((section) => {
+  sectionAllObserver.observe(section);
+  section.classList.add("section--hidden");
+});
+
+// Changing * style scroll-margin in case sections are hidden or not
+
 // Toggl API Clock
 
 /* API: f4d69d308e97e4bf700051591f16876f
 TOGGL: Content-Type: application/json  */
 
-const apiToken = "f4d69d308e97e4bf700051591f16876f";
+/* const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
 async function getTimeLearning(apiToken) {
   const response = await fetch("https://api.track.toggl.com/api/v9/me/cors", {
@@ -106,3 +147,4 @@ async function getTimeLearning(apiToken) {
 }
 
 getTimeLearning(apiToken);
+ */
