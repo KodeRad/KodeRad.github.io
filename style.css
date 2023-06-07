@@ -184,7 +184,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5rem;
-  padding: 0 2rem;
+  padding: 0 14.5rem;
 }
 
 .skills__img {
@@ -210,32 +210,38 @@ body {
 
 .projects {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: center; */
   margin-bottom: 5rem;
-  padding: 0 2rem;
+  padding: 0 0rem;
   font: inherit;
+  overflow: hidden;
 }
 
-.projects__links {
+/* .projects__links {
   display: flex;
   justify-content: center;
   list-style: none;
   font: inherit;
-}
+} */
 
-.project__link {
-  text-decoration: none;
-  /* font: inherit; */
-}
-
-.project__item {
-  margin-left: 5rem;
+.project {
+  /* margin-left: 20rem; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   text-transform: uppercase;
   color: inherit;
   text-decoration: none;
   font: inherit;
-  text-align: center;
+}
+
+.project__description {
+  display: flex;
+}
+
+.project__link {
+  text-decoration: none;
 }
 
 .project__title {
@@ -247,7 +253,28 @@ body {
 .project__img {
   height: 300px;
   width: auto;
-  align-self: center;
+  /* align-self: center; */
+}
+
+.project__description {
+  text-transform: none;
+  font-weight: 400;
+}
+
+.slider__btn {
+  color: whitesmoke;
+  background-color: rgb(40, 40, 40);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  margin: 10rem 5rem;
+  border-style: none;
+}
+
+.slider__btn--right {
+  /* margin: 10rem 50rem; */
+  transform: translateX(45rem);
 }
 
 /* SECTION 4 - CONTACT */
@@ -267,7 +294,8 @@ body {
 }
 
 .contact__item img {
-  padding-left: 14rem;
+  padding-left: 10.75rem;
+  margin-right: 0rem;
   text-transform: uppercase;
   color: inherit;
   text-decoration: none;

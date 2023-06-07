@@ -1,3 +1,9 @@
+"use strict";
+
+/* alert(
+  "Site still in progress. Come back in a couple of days to see what's changed! 😃"
+); */
+
 // Selectors:
 
 // Setions:
@@ -28,6 +34,7 @@ const smoothScrollHandler = function (e, target) {
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 };
+
 // Top navbar
 navLinks.addEventListener("click", (e) => {
   smoothScrollHandler(e, "nav__link");
@@ -96,17 +103,7 @@ const allSections = document.querySelectorAll(".section");
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
 
-  /*   if (document.querySelectorAll(".section--hidden")) {
-    console.log("test");
-    allElements.style.scrollMargin = "15rem";
-  }
-
-  if (!document.querySelectorAll(".section--hidden")) {
-    allElements.style.scrollMargin = "8rem";
-  }
- */
   if (!entry.isIntersecting) return;
 
   entry.target.classList.remove("section--hidden");
@@ -120,12 +117,44 @@ const sectionAllObserver = new IntersectionObserver(revealSection, {
   rootMargin: "0px",
 });
 
-allSections.forEach((section) => {
+/* allSections.forEach((section) => {
   sectionAllObserver.observe(section);
   section.classList.add("section--hidden");
 });
+ */
 
-// Changing * style scroll-margin in case sections are hidden or not
+// Project slider
+
+const slides = document.querySelectorAll(".slide");
+
+const bttnLeft = document.querySelector(".slider__btn--left");
+const bttnRight = document.querySelector(".slider__btn--right");
+
+/* slides.forEach((s, i) => {
+  s.style.transform = `translateX(${100 * i}%)`;
+}); */
+
+const sliderHelper = function (side, e) {
+  e.preventDefault();
+
+  if (!e.target.classList.contains("slider__btn")) return;
+
+  if (e.target.classList.contains(`slider__btn--${side}`)) {
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${
+        side === "left" ? 100 * (i - 1) : 100 * (i + 1)
+      }%)`;
+    });
+    console.log(`${side}`);
+  }
+};
+
+bttnLeft.addEventListener("click", function (e) {
+  sliderHelper("left", e);
+});
+bttnRight.addEventListener("click", function (e) {
+  sliderHelper("right", e);
+});
 
 // Toggl API Clock
 
