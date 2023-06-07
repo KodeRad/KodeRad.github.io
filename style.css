@@ -209,35 +209,49 @@ body {
 /* SECTION 3 - MY PROJECTS */
 
 .projects {
+  position: relative;
   display: flex;
+  height: 38rem;
+  margin: 0 auto;
+  font: inherit;
   /* justify-content: space-between; */
   /* align-items: center; */
-  margin-bottom: 5rem;
-  padding: 0 0rem;
-  font: inherit;
   overflow: hidden;
 }
 
-/* .projects__links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  font: inherit;
-} */
-
 .project {
-  /* margin-left: 20rem; */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 1s;
+
+  margin-top: -10%;
+  margin-left: 32%;
+
+  /*  margin-left: 20rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-transform: uppercase;
   color: inherit;
-  text-decoration: none;
-  font: inherit;
+  
+  font: inherit; */
 }
 
-.project__description {
+.project__content {
+  margin: 0 0;
+  padding: 0 0;
+  top: 0;
+  width: 100%;
+  height: auto;
   display: flex;
+  align-items: center;
 }
 
 .project__link {
@@ -246,7 +260,7 @@ body {
 
 .project__title {
   font: inherit;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 1rem;
 }
 
@@ -257,24 +271,42 @@ body {
 }
 
 .project__description {
+  display: flex;
+  margin: 0 2.5rem;
+  margin-top: 2rem;
+  width: 12rem;
+  word-wrap: normal;
+  font-size: large;
+}
+
+.project__description {
   text-transform: none;
   font-weight: 400;
 }
 
 .slider__btn {
+  position: absolute;
+  top: 10%;
   color: whitesmoke;
   background-color: rgb(40, 40, 40);
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  position: absolute;
   margin: 10rem 5rem;
   border-style: none;
 }
 
 .slider__btn--right {
+  right: 6%;
+  transform: translate(-50%, -50%);
   /* margin: 10rem 50rem; */
-  transform: translateX(45rem);
+  transition: transform 0s;
+}
+.slider__btn--left {
+  left: 6%;
+  transform: translate(50%, -50%);
+  /* margin: 10rem 50rem; */
+  transition: transform 0s;
 }
 
 /* SECTION 4 - CONTACT */
@@ -300,6 +332,10 @@ body {
   color: inherit;
   text-decoration: none;
   font: inherit;
+}
+
+.contact__link {
+  text-decoration: none;
 }
 
 /* FOOTER */
@@ -348,12 +384,12 @@ body {
 /* MOBILE VIEW */
 /* <600px, 601px, 768px, 992px, 1200px */
 
-@media (max-width: 768px) {
+/* CHANGE THE PXS LATER!!! */
+@media (max-width: 100px) {
   .wrapper__main {
     width: 100vh;
     margin: 0 auto;
   }
-
   .header {
     border-top: 1px solid transparent;
     position: relative;

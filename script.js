@@ -125,14 +125,38 @@ const sectionAllObserver = new IntersectionObserver(revealSection, {
 
 // Project slider
 
-const slides = document.querySelectorAll(".slide");
-
+const slides = document.querySelectorAll(".project");
 const bttnLeft = document.querySelector(".slider__btn--left");
 const bttnRight = document.querySelector(".slider__btn--right");
 
-/* slides.forEach((s, i) => {
-  s.style.transform = `translateX(${100 * i}%)`;
-}); */
+let curSlide = 0;
+const maxSlide = slides.length - 1;
+console.log(maxSlide);
+
+const goToSlide = function (slide) {
+  slides.forEach((s, i) => {
+    // slide 0: 0%, 100%, 200%
+    s.style.transform = `translateX(${100 * (slide + i)}%)`;
+  });
+};
+
+goToSlide(curSlide);
+
+const nextSlide = function () {
+  if (curSlide === maxSlide * -1) {
+    curSlide = 0;
+  } else {
+    curSlide--;
+  }
+  goToSlide(curSlide);
+};
+
+const prevSlide = function () {
+  if (curSlide === 0) {
+    curSlide = maxSlide * -1;
+  } else curSlide++;
+  goToSlide(curSlide);
+};
 
 const sliderHelper = function (side, e) {
   e.preventDefault();
@@ -149,12 +173,8 @@ const sliderHelper = function (side, e) {
   }
 };
 
-bttnLeft.addEventListener("click", function (e) {
-  sliderHelper("left", e);
-});
-bttnRight.addEventListener("click", function (e) {
-  sliderHelper("right", e);
-});
+bttnLeft.addEventListener("click", prevSlide);
+bttnRight.addEventListener("click", nextSlide);
 
 // Toggl API Clock
 
