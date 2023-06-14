@@ -194,9 +194,11 @@ body {
 }
 
 .toggl__img {
-  width: 300px;
-  align-self: center;
+  font-size: xx-large;
+  margin-left: 6rem;
+  width: 10rem;
   height: auto;
+  align-self: center;
 }
 
 .section__description__second {
@@ -427,7 +429,7 @@ contact__item */
 /* <600px, 601px, 768px, 992px, 1200px */
 
 /* CHANGE THE PXS LATER!!! */
-@media (max-width: 100px) {
+@media (max-width: 768px) {
   .wrapper__main {
     width: 100vh;
     margin: 0 auto;

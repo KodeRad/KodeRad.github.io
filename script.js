@@ -5,7 +5,6 @@
 ); */
 
 // Selectors:
-
 // Setions:
 const section1 = document.querySelector("#section--1");
 const section2 = document.querySelector("#section--2");
@@ -25,246 +24,259 @@ const allElements = document.querySelector("*");
 const scrollDownImg = document.querySelector(".scroll__img");
 const dotContainer = document.querySelector(".dots");
 
-// Navbars
-
-// Smooth Scrolling:
-const smoothScrollHandler = function (e, target) {
-  e.preventDefault();
-  if (e.target.classList.contains(`${target}`)) {
-    const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-  }
-};
-
-// Top navbar
-navLinks.addEventListener("click", (e) => {
-  smoothScrollHandler(e, "nav__link");
-});
-
-// Bottom navbar
-footerLinks.addEventListener("click", (e) => {
-  smoothScrollHandler(e, "footer__link");
-});
-
-// Menu fade out animation:
-
-const fadeOutHandler = function (e, opacity) {
-  if (
-    e.target.classList.contains("nav__link") ||
-    e.target.classList.contains("footer__link")
-  ) {
-    // select (logo, siblings)
-    const others = document.querySelectorAll(".fade__out");
-
-    others.forEach((other) => {
-      if (other !== e.target) {
-        other.style.opacity = opacity;
-      }
-    });
-  }
-};
-
-menus.forEach((menu) => {
-  menu.addEventListener("mouseover", function (e) {
-    fadeOutHandler(e, 0.5);
-  });
-  menu.addEventListener("mouseout", function (e) {
-    fadeOutHandler(e, 1);
-  });
-});
-
-// Sticky Navigation:
-
-const stickyNav = function (entries, observer) {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      nav.classList.add("sticky");
-      scrollDownImg.style.opacity = 0;
-    }
-    if (entry.isIntersecting) {
-      nav.classList.remove("sticky");
-      scrollDownImg.style.opacity = 1;
-    }
-  });
-};
-
-const section1Observer = new IntersectionObserver(stickyNav, {
-  root: null,
-  threshold: 0.2,
-  // TODO: Calculate rootMargin dynamically using .getBoundClientRect()
-  rootMargin: "30px",
-});
-section1Observer.observe(section1);
-
-// Reveling sections
-// 1. section observer
-// 2. for each section reveal current section
-
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-
-  entry.target.classList.remove("section--hidden");
-
-  observer.unobserve(entry.target);
-};
-
-const sectionAllObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.1,
-  rootMargin: "0px",
-});
-
-///////////////////////////////////
-// Project slider
-
-const slider = function () {
-  const slides = document.querySelectorAll(".project");
-  const bttnLeft = document.querySelector(".slider__btn--left");
-  const bttnRight = document.querySelector(".slider__btn--right");
-  let curSlide = 0;
-  const maxSlide = slides.length - 1;
-
-  // Dots
-  const createDots = function () {
-    slides.forEach(function (_, i) {
-      dotContainer.insertAdjacentHTML(
-        "beforeend",
-        `<button class="dots__dot" data-slide="${i}"></button>`
-      );
-    });
-  };
-
-  createDots();
-
-  const activeDot = function () {
-    slides.forEach((slide) => {
-      if (slide.style.transform === "translateX(0%)") {
-        const slideNumber = slide.classList.value.slice(-1);
-
-        document.querySelectorAll(".dots__dot").forEach((dot) => {
-          if (dot.dataset.slide === `${slideNumber - 1}`) {
-            dot.classList.add("dot__active");
-          } else dot.classList.remove("dot__active");
-        });
-      }
-    });
-  };
-
-  const goToSlide = function (slide) {
-    slides.forEach((s, i) => {
-      // slide 0: 0%, 100%, 200%
-      s.style.transform = `translateX(${100 * (slide + i)}%)`;
-      activeDot();
-    });
-  };
-
-  goToSlide(curSlide);
-
-  const nextSlide = function () {
-    if (curSlide === maxSlide * -1) {
-      curSlide = 0;
-    } else {
-      curSlide--;
-    }
-    goToSlide(curSlide);
-  };
-
-  const prevSlide = function () {
-    if (curSlide === 0) {
-      curSlide = maxSlide * -1;
-    } else curSlide++;
-    goToSlide(curSlide);
-  };
-
-  bttnLeft.addEventListener("click", prevSlide);
-  bttnRight.addEventListener("click", nextSlide);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowLeft") prevSlide();
-    if (e.key === "ArrowRight") nextSlide();
-  });
-
-  dotContainer.addEventListener("click", function (e) {
+function handleLargeScreen() {
+  // Enable or modify functions specific to larger screens
+  // Example: Add event listeners or modify functionality
+  // Navbars
+  // Smooth Scrolling:
+  const smoothScrollHandler = function (e, target) {
     e.preventDefault();
-    // matching strategy
-    if (!e.target.classList.contains("dots__dot")) return;
+    if (e.target.classList.contains(`${target}`)) {
+      const id = e.target.getAttribute("href");
+      document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-    curSlide = e.target.dataset.slide * -1;
+  // Top navbar
+  navLinks.addEventListener("click", (e) => {
+    smoothScrollHandler(e, "nav__link");
+  });
+
+  // Bottom navbar
+  footerLinks.addEventListener("click", (e) => {
+    smoothScrollHandler(e, "footer__link");
+  });
+
+  // Menu fade out animation:
+
+  const fadeOutHandler = function (e, opacity) {
+    if (
+      e.target.classList.contains("nav__link") ||
+      e.target.classList.contains("footer__link")
+    ) {
+      // select (logo, siblings)
+      const others = document.querySelectorAll(".fade__out");
+
+      others.forEach((other) => {
+        if (other !== e.target) {
+          other.style.opacity = opacity;
+        }
+      });
+    }
+  };
+
+  menus.forEach((menu) => {
+    menu.addEventListener("mouseover", function (e) {
+      fadeOutHandler(e, 0.5);
+    });
+    menu.addEventListener("mouseout", function (e) {
+      fadeOutHandler(e, 1);
+    });
+  });
+
+  ///////////////////////////////////
+  // Sticky Navigation:
+
+  const stickyNavFunction = function () {
+    const stickyNav = function (entries, observer) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          nav.classList.add("sticky");
+          scrollDownImg.style.opacity = 0;
+        }
+        if (entry.isIntersecting) {
+          nav.classList.remove("sticky");
+          scrollDownImg.style.opacity = 1;
+        }
+      });
+    };
+
+    const section1Observer = new IntersectionObserver(stickyNav, {
+      root: null,
+      threshold: 0.2,
+      // TODO: Calculate rootMargin dynamically using .getBoundClientRect()
+      rootMargin: "30px",
+    });
+    section1Observer.observe(section1);
+
+    // Reveling sections
+    // 1. section observer
+    // 2. for each section reveal current section
+
+    const revealSection = function (entries, observer) {
+      const [entry] = entries;
+
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.remove("section--hidden");
+
+      observer.unobserve(entry.target);
+    };
+
+    const sectionAllObserver = new IntersectionObserver(revealSection, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: "0px",
+    });
+  };
+  stickyNavFunction();
+
+  ///////////////////////////////////
+  // Project slider
+
+  const slider = function () {
+    const slides = document.querySelectorAll(".project");
+    const bttnLeft = document.querySelector(".slider__btn--left");
+    const bttnRight = document.querySelector(".slider__btn--right");
+    let curSlide = 0;
+    const maxSlide = slides.length - 1;
+
+    // Dots
+    const createDots = function () {
+      slides.forEach(function (_, i) {
+        dotContainer.insertAdjacentHTML(
+          "beforeend",
+          `<button class="dots__dot" data-slide="${i}"></button>`
+        );
+      });
+    };
+
+    createDots();
+
+    const activeDot = function () {
+      slides.forEach((slide) => {
+        if (slide.style.transform === "translateX(0%)") {
+          const slideNumber = slide.classList.value.slice(-1);
+
+          document.querySelectorAll(".dots__dot").forEach((dot) => {
+            if (dot.dataset.slide === `${slideNumber - 1}`) {
+              dot.classList.add("dot__active");
+            } else dot.classList.remove("dot__active");
+          });
+        }
+      });
+    };
+
+    const goToSlide = function (slide) {
+      slides.forEach((s, i) => {
+        // slide 0: 0%, 100%, 200%
+        s.style.transform = `translateX(${100 * (slide + i)}%)`;
+        activeDot();
+      });
+    };
 
     goToSlide(curSlide);
-  });
-};
-slider();
-///////////////////
 
-// Simple clock
+    const nextSlide = function () {
+      if (curSlide === maxSlide * -1) {
+        curSlide = 0;
+      } else {
+        curSlide--;
+      }
+      goToSlide(curSlide);
+    };
 
-function getTime() {
-  const clock = document.querySelector(".toggl__img");
-  const curTime = new Date();
-  const hours = curTime.getHours();
-  const minutes = curTime.getMinutes();
+    const prevSlide = function () {
+      if (curSlide === 0) {
+        curSlide = maxSlide * -1;
+      } else curSlide++;
+      goToSlide(curSlide);
+    };
 
-  const formattedTime =
-    hours.toString().padStart(2, "0") +
-    ":" +
-    minutes.toString().padStart(2, "0");
+    bttnLeft.addEventListener("click", prevSlide);
+    bttnRight.addEventListener("click", nextSlide);
 
-  clock.textContent = formattedTime;
-}
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") prevSlide();
+      if (e.key === "ArrowRight") nextSlide();
+    });
 
-setInterval(getTime, 1000);
+    dotContainer.addEventListener("click", function (e) {
+      e.preventDefault();
+      // matching strategy
+      if (!e.target.classList.contains("dots__dot")) return;
 
-// Toggl API Clock
+      curSlide = e.target.dataset.slide * -1;
 
-// API: f4d69d308e97e4bf700051591f16876f
+      goToSlide(curSlide);
+    });
+  };
+  slider();
+  ///////////////////
 
-const apiToken = "f4d69d308e97e4bf700051591f16876f";
+  // TogglAPI
+  const togglAPI = function () {
+    function getTime() {
+      const clock = document.querySelector(".toggl__img");
+      const curTime = new Date();
+      const hours = curTime.getHours();
+      const minutes = curTime.getMinutes();
 
-/* async function getTimeLearning(apiToken) {
-  const response = await fetch("https://api.track.toggl.com/api/v9/me/cors", {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-    },
-  });
-  const data = await response.json();
-  console.log(data);
-  return data.data;
-}
+      const formattedTime =
+        hours.toString().padStart(2, "0") +
+        ":" +
+        minutes.toString().padStart(2, "0");
 
-getTimeLearning(apiToken); */
+      clock.textContent = formattedTime;
+    }
 
-async function getTimeLearning(apiToken) {
-  const response = await fetch("https://api.track.toggl.com/api/v9/me", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-    },
-  });
-  const data = await response.json();
-  console.log(data);
-  return data.data;
-}
+    setInterval(getTime, 1000);
 
-getTimeLearning(apiToken);
+    // Toggl API Clock
 
-async function getMeInfo() {
-  const response = await fetch("https://api.track.toggl.com/api/v9/me", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Basic ${btoa(`
+    const apiToken = "f4d69d308e97e4bf700051591f16876f";
+
+    async function getTimeLearning(apiToken) {
+      const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      return data.data;
+    }
+
+    getTimeLearning(apiToken);
+
+    async function getMeInfo() {
+      const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${btoa(`
         <kondzikaoko@gmail.com>:<jOo&&Uk*RP90>`)}`,
-    },
-  })
-    .then((resp) => resp.json())
-    .then((json) => {
-      console.log(json);
-    })
-    .catch((err) => console.error(err));
+        },
+      })
+        .then((resp) => resp.json())
+        .then((json) => {
+          console.log(json);
+        })
+        .catch((err) => console.error(err));
+    }
+    getMeInfo();
+  };
+  //togglAPI();
 }
-getMeInfo();
+
+function handleSmallScreen() {
+  // Modify or disable functions specific to smaller screens
+  // Example: Remove event listeners or modify functionality
+}
+
+// Check screen size on page load and resize
+function checkScreenSize() {
+  if (window.innerWidth <= 768) {
+    handleSmallScreen();
+  } else {
+    handleLargeScreen();
+  }
+}
+
+// Call checkScreenSize on page load
+window.addEventListener("load", checkScreenSize);
+
+// Call checkScreenSize on window resize
+window.addEventListener("resize", checkScreenSize);
