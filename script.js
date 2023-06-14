@@ -199,14 +199,31 @@ const slider = function () {
 slider();
 ///////////////////
 
+// Simple clock
+
+function getTime() {
+  const clock = document.querySelector(".toggl__img");
+  const curTime = new Date();
+  const hours = curTime.getHours();
+  const minutes = curTime.getMinutes();
+
+  const formattedTime =
+    hours.toString().padStart(2, "0") +
+    ":" +
+    minutes.toString().padStart(2, "0");
+
+  clock.textContent = formattedTime;
+}
+
+setInterval(getTime, 1000);
+
 // Toggl API Clock
 
-/* API: f4d69d308e97e4bf700051591f16876f
-TOGGL: Content-Type: application/json */
+// API: f4d69d308e97e4bf700051591f16876f
 
 const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
-async function getTimeLearning(apiToken) {
+/* async function getTimeLearning(apiToken) {
   const response = await fetch("https://api.track.toggl.com/api/v9/me/cors", {
     headers: {
       "Content-Type": "application/json",
@@ -218,4 +235,36 @@ async function getTimeLearning(apiToken) {
   return data.data;
 }
 
+getTimeLearning(apiToken); */
+
+async function getTimeLearning(apiToken) {
+  const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+  return data.data;
+}
+
 getTimeLearning(apiToken);
+
+async function getMeInfo() {
+  const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${btoa(`
+        <kondzikaoko@gmail.com>:<jOo&&Uk*RP90>`)}`,
+    },
+  })
+    .then((resp) => resp.json())
+    .then((json) => {
+      console.log(json);
+    })
+    .catch((err) => console.error(err));
+}
+getMeInfo();
