@@ -11,6 +11,7 @@ const section1 = document.querySelector("#section--1");
 const section2 = document.querySelector("#section--2");
 const section3 = document.querySelector("#section--3");
 const section4 = document.querySelector("#section--4");
+const allSections = document.querySelectorAll(".section");
 
 // Navbars:
 const nav = document.querySelector(".nav");
@@ -21,8 +22,8 @@ const menus = document.querySelectorAll(".menu");
 
 // Others selectors:
 const allElements = document.querySelector("*");
-
 const scrollDownImg = document.querySelector(".scroll__img");
+const dotContainer = document.querySelector(".dots");
 
 // Navbars
 
@@ -99,8 +100,6 @@ section1Observer.observe(section1);
 // 1. section observer
 // 2. for each section reveal current section
 
-const allSections = document.querySelectorAll(".section");
-
 const revealSection = function (entries, observer) {
   const [entry] = entries;
 
@@ -117,71 +116,95 @@ const sectionAllObserver = new IntersectionObserver(revealSection, {
   rootMargin: "0px",
 });
 
-/* allSections.forEach((section) => {
-  sectionAllObserver.observe(section);
-  section.classList.add("section--hidden");
-});
- */
-
+///////////////////////////////////
 // Project slider
 
-const slides = document.querySelectorAll(".project");
-const bttnLeft = document.querySelector(".slider__btn--left");
-const bttnRight = document.querySelector(".slider__btn--right");
+const slider = function () {
+  const slides = document.querySelectorAll(".project");
+  const bttnLeft = document.querySelector(".slider__btn--left");
+  const bttnRight = document.querySelector(".slider__btn--right");
+  let curSlide = 0;
+  const maxSlide = slides.length - 1;
 
-let curSlide = 0;
-const maxSlide = slides.length - 1;
-console.log(maxSlide);
+  // Dots
+  const createDots = function () {
+    slides.forEach(function (_, i) {
+      dotContainer.insertAdjacentHTML(
+        "beforeend",
+        `<button class="dots__dot" data-slide="${i}"></button>`
+      );
+    });
+  };
 
-const goToSlide = function (slide) {
-  slides.forEach((s, i) => {
-    // slide 0: 0%, 100%, 200%
-    s.style.transform = `translateX(${100 * (slide + i)}%)`;
+  createDots();
+
+  const activeDot = function () {
+    slides.forEach((slide) => {
+      if (slide.style.transform === "translateX(0%)") {
+        const slideNumber = slide.classList.value.slice(-1);
+
+        document.querySelectorAll(".dots__dot").forEach((dot) => {
+          if (dot.dataset.slide === `${slideNumber - 1}`) {
+            dot.classList.add("dot__active");
+          } else dot.classList.remove("dot__active");
+        });
+      }
+    });
+  };
+
+  const goToSlide = function (slide) {
+    slides.forEach((s, i) => {
+      // slide 0: 0%, 100%, 200%
+      s.style.transform = `translateX(${100 * (slide + i)}%)`;
+      activeDot();
+    });
+  };
+
+  goToSlide(curSlide);
+
+  const nextSlide = function () {
+    if (curSlide === maxSlide * -1) {
+      curSlide = 0;
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+  };
+
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide * -1;
+    } else curSlide++;
+    goToSlide(curSlide);
+  };
+
+  bttnLeft.addEventListener("click", prevSlide);
+  bttnRight.addEventListener("click", nextSlide);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") prevSlide();
+    if (e.key === "ArrowRight") nextSlide();
+  });
+
+  dotContainer.addEventListener("click", function (e) {
+    e.preventDefault();
+    // matching strategy
+    if (!e.target.classList.contains("dots__dot")) return;
+
+    curSlide = e.target.dataset.slide * -1;
+
+    goToSlide(curSlide);
   });
 };
-
-goToSlide(curSlide);
-
-const nextSlide = function () {
-  if (curSlide === maxSlide * -1) {
-    curSlide = 0;
-  } else {
-    curSlide--;
-  }
-  goToSlide(curSlide);
-};
-
-const prevSlide = function () {
-  if (curSlide === 0) {
-    curSlide = maxSlide * -1;
-  } else curSlide++;
-  goToSlide(curSlide);
-};
-
-const sliderHelper = function (side, e) {
-  e.preventDefault();
-
-  if (!e.target.classList.contains("slider__btn")) return;
-
-  if (e.target.classList.contains(`slider__btn--${side}`)) {
-    slides.forEach((s, i) => {
-      s.style.transform = `translateX(${
-        side === "left" ? 100 * (i - 1) : 100 * (i + 1)
-      }%)`;
-    });
-    console.log(`${side}`);
-  }
-};
-
-bttnLeft.addEventListener("click", prevSlide);
-bttnRight.addEventListener("click", nextSlide);
+slider();
+///////////////////
 
 // Toggl API Clock
 
 /* API: f4d69d308e97e4bf700051591f16876f
-TOGGL: Content-Type: application/json  */
+TOGGL: Content-Type: application/json */
 
-/* const apiToken = "f4d69d308e97e4bf700051591f16876f";
+const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
 async function getTimeLearning(apiToken) {
   const response = await fetch("https://api.track.toggl.com/api/v9/me/cors", {
@@ -196,4 +219,3 @@ async function getTimeLearning(apiToken) {
 }
 
 getTimeLearning(apiToken);
- */
