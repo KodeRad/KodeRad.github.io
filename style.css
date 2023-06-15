@@ -468,7 +468,29 @@ contact__item */
 /* <600px, 601px, 768px, 992px, 1200px */
 
 /* CHANGE THE PXS LATER!!! */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: "Open Sans", sans-serif;
+    font-size: 100%;
+    box-sizing: content-box;
+    color: whitesmoke;
+    scroll-margin: 8rem;
+    transition: transform 1.5s, opacity 0.5s;
+    max-width: 100%;
+  }
+
+  body {
+    background-image: url(/src/codeBackhround.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-width: 100%;
+  }
+
   .wrapper__main {
     width: 100vh;
     margin: 0 auto;
@@ -502,7 +524,8 @@ contact__item */
   /* SECTION 1 - HOME */
 
   .welcome__name {
-    width: 90%;
+    width: 90vh;
+    max-width: 80%;
     height: auto;
     margin-left: 20px;
     margin-top: 10rem;

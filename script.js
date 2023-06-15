@@ -270,37 +270,9 @@ const togglAPI = function () {
 };
 // togglAPI();
 
-function handleLargeScreen() {
-  // Enable or modify functions specific to larger screens
-  // Example: Add event listeners or modify functionality
-  navbarBehaviour();
-  stickyNavFunction();
-  sectionsReveal();
-  slider();
-}
+///////////////////////////////////
 
-function handleSmallScreen() {
-  // Modify or disable functions specific to smaller screens
-  // Example: Remove event listeners or modify functionality
-  sectionsReveal();
-  slider();
-}
-
-// Check screen size on page load and resize
-function checkScreenSize() {
-  if (window.innerWidth <= 1000) {
-    handleSmallScreen();
-  } else {
-    handleLargeScreen();
-  }
-}
-
-// Call checkScreenSize on page load
-window.addEventListener("load", checkScreenSize);
-
-// Call checkScreenSize on window resize
-window.addEventListener("resize", checkScreenSize);
-
+// Chuck Norris
 const chuckAPI = async function () {
   const url = "https://api.chucknorris.io/jokes/random";
 
@@ -320,4 +292,35 @@ document.querySelector(".btn__joke").addEventListener("click", function (e) {
   chuckAPI();
 });
 
-chuckAPI();
+function handleLargeScreen() {
+  // Enable or modify functions specific to larger screens
+  // Example: Add event listeners or modify functionality
+  navbarBehaviour();
+  stickyNavFunction();
+  sectionsReveal();
+  slider();
+  chuckAPI();
+}
+
+function handleSmallScreen() {
+  // Modify or disable functions specific to smaller screens
+  // Example: Remove event listeners or modify functionality
+  sectionsReveal();
+  slider();
+  chuckAPI();
+}
+
+// Check screen size on page load and resize
+function checkScreenSize() {
+  if (window.innerWidth <= 1000) {
+    handleSmallScreen();
+  } else {
+    handleLargeScreen();
+  }
+}
+
+// Call checkScreenSize on page load
+window.addEventListener("load", checkScreenSize);
+
+// Call checkScreenSize on window resize
+window.addEventListener("resize", checkScreenSize);
