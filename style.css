@@ -63,8 +63,7 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
-  /* background: none;
-  font: inherit; */
+
   padding: 0 4rem;
 }
 
@@ -193,10 +192,10 @@ body {
   height: auto;
 }
 
-.toggl__img {
-  font-size: xx-large;
-  margin-left: 6rem;
-  width: 10rem;
+.hours__img {
+  margin-top: 1rem;
+  margin-left: 4rem;
+  width: 13rem;
   height: auto;
   align-self: center;
 }

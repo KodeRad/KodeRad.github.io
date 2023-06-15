@@ -118,6 +118,9 @@ function handleLargeScreen() {
       threshold: 0.1,
       rootMargin: "0px",
     });
+    allSections.forEach((section) => {
+      sectionAllObserver.observe(section);
+    });
   };
   stickyNavFunction();
 
@@ -187,6 +190,7 @@ function handleLargeScreen() {
     bttnRight.addEventListener("click", nextSlide);
 
     document.addEventListener("keydown", function (e) {
+      e.preventDefault();
       if (e.key === "ArrowLeft") prevSlide();
       if (e.key === "ArrowRight") nextSlide();
     });
@@ -258,7 +262,7 @@ function handleLargeScreen() {
     }
     //getMeInfo();
   };
-  togglAPI();
+  // togglAPI();
 }
 
 function handleSmallScreen() {
@@ -297,9 +301,7 @@ const chuckAPI = async function () {
 
 document.querySelector(".btn__joke").addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("click");
   chuckAPI();
 });
-chuckAPI();
 
-// insertAdjacentHTML (after clicking GET CHUCK's JOKE) with Joke and Chuck's face
+chuckAPI();
