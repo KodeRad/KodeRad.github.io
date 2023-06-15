@@ -433,6 +433,7 @@ contact__item */
 }
 
 .btn__joke {
+  margin-top: 2rem;
   color: rgb(40, 40, 40);
   width: 10rem;
   height: 3rem;
