@@ -24,10 +24,9 @@ const allElements = document.querySelector("*");
 const scrollDownImg = document.querySelector(".scroll__img");
 const dotContainer = document.querySelector(".dots");
 
-function handleLargeScreen() {
-  // Enable or modify functions specific to larger screens
-  // Example: Add event listeners or modify functionality
-  // Navbars
+// Navbars
+
+const navbarBehaviour = function () {
   // Smooth Scrolling:
   const smoothScrollHandler = function (e, target) {
     e.preventDefault();
@@ -73,206 +72,223 @@ function handleLargeScreen() {
       fadeOutHandler(e, 1);
     });
   });
+};
 
-  ///////////////////////////////////
-  // Sticky Navigation:
+///////////////////////////////////
+// Sticky Navigation:
 
-  const stickyNavFunction = function () {
-    const stickyNav = function (entries, observer) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          nav.classList.add("sticky");
-          scrollDownImg.style.opacity = 0;
-        }
-        if (entry.isIntersecting) {
-          nav.classList.remove("sticky");
-          scrollDownImg.style.opacity = 1;
-        }
-      });
-    };
-
-    const section1Observer = new IntersectionObserver(stickyNav, {
-      root: null,
-      threshold: 0.2,
-      // TODO: Calculate rootMargin dynamically using .getBoundClientRect()
-      rootMargin: "30px",
-    });
-    section1Observer.observe(section1);
-
-    // Reveling sections
-    // 1. section observer
-    // 2. for each section reveal current section
-
-    const revealSection = function (entries, observer) {
-      const [entry] = entries;
-
-      if (!entry.isIntersecting) return;
-
-      entry.target.classList.remove("section--hidden");
-
-      observer.unobserve(entry.target);
-    };
-
-    const sectionAllObserver = new IntersectionObserver(revealSection, {
-      root: null,
-      threshold: 0.1,
-      rootMargin: "0px",
-    });
-    allSections.forEach((section) => {
-      sectionAllObserver.observe(section);
+const stickyNavFunction = function () {
+  const stickyNav = function (entries, observer) {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        nav.classList.add("sticky");
+        scrollDownImg.style.opacity = 0;
+      }
+      if (entry.isIntersecting) {
+        nav.classList.remove("sticky");
+        scrollDownImg.style.opacity = 1;
+      }
     });
   };
-  stickyNavFunction();
 
-  ///////////////////////////////////
-  // Project slider
+  const section1Observer = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0.2,
+    // TODO: Calculate rootMargin dynamically using .getBoundClientRect()
+    rootMargin: "30px",
+  });
+  section1Observer.observe(section1);
 
-  const slider = function () {
-    const slides = document.querySelectorAll(".project");
-    const bttnLeft = document.querySelector(".slider__btn--left");
-    const bttnRight = document.querySelector(".slider__btn--right");
-    let curSlide = 0;
-    const maxSlide = slides.length - 1;
+  // Reveling sections
+  // 1. section observer
+  // 2. for each section reveal current section
+  allSections.forEach((section) => {
+    section.classList.add("section--hidden");
+  });
+};
 
-    // Dots
-    const createDots = function () {
-      slides.forEach(function (_, i) {
-        dotContainer.insertAdjacentHTML(
-          "beforeend",
-          `<button class="dots__dot" data-slide="${i}"></button>`
-        );
-      });
-    };
+///////////////////////////////////
+// Sections reveal
 
-    createDots();
+const sectionsReveal = function () {
+  const revealSection = function (entries, observer) {
+    const [entry] = entries;
 
-    const activeDot = function () {
-      slides.forEach((slide) => {
-        if (slide.style.transform === "translateX(0%)") {
-          const slideNumber = slide.classList.value.slice(-1);
+    if (!entry.isIntersecting) return;
 
-          document.querySelectorAll(".dots__dot").forEach((dot) => {
-            if (dot.dataset.slide === `${slideNumber - 1}`) {
-              dot.classList.add("dot__active");
-            } else dot.classList.remove("dot__active");
-          });
-        }
-      });
-    };
+    entry.target.classList.remove("section--hidden");
 
-    const goToSlide = function (slide) {
-      slides.forEach((s, i) => {
-        // slide 0: 0%, 100%, 200%
-        s.style.transform = `translateX(${100 * (slide + i)}%)`;
-        activeDot();
-      });
-    };
+    observer.unobserve(entry.target);
+  };
+
+  const sectionAllObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.1,
+    rootMargin: "0px",
+  });
+  allSections.forEach((section) => {
+    sectionAllObserver.observe(section);
+  });
+};
+
+///////////////////////////////////
+// Project slider
+
+const slider = function () {
+  const slides = document.querySelectorAll(".project");
+  const bttnLeft = document.querySelector(".slider__btn--left");
+  const bttnRight = document.querySelector(".slider__btn--right");
+  let curSlide = 0;
+  const maxSlide = slides.length - 1;
+
+  // Dots
+  const createDots = function () {
+    slides.forEach(function (_, i) {
+      dotContainer.insertAdjacentHTML(
+        "beforeend",
+        `<button class="dots__dot" data-slide="${i}"></button>`
+      );
+    });
+  };
+
+  createDots();
+
+  const activeDot = function () {
+    slides.forEach((slide) => {
+      if (slide.style.transform === "translateX(0%)") {
+        const slideNumber = slide.classList.value.slice(-1);
+
+        document.querySelectorAll(".dots__dot").forEach((dot) => {
+          if (dot.dataset.slide === `${slideNumber - 1}`) {
+            dot.classList.add("dot__active");
+          } else dot.classList.remove("dot__active");
+        });
+      }
+    });
+  };
+
+  const goToSlide = function (slide) {
+    slides.forEach((s, i) => {
+      // slide 0: 0%, 100%, 200%
+      s.style.transform = `translateX(${100 * (slide + i)}%)`;
+      activeDot();
+    });
+  };
+
+  goToSlide(curSlide);
+
+  const nextSlide = function () {
+    if (curSlide === maxSlide * -1) {
+      curSlide = 0;
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+  };
+
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide * -1;
+    } else curSlide++;
+    goToSlide(curSlide);
+  };
+
+  bttnLeft.addEventListener("click", prevSlide);
+  bttnRight.addEventListener("click", nextSlide);
+
+  document.addEventListener("keydown", function (e) {
+    e.preventDefault();
+    if (e.key === "ArrowLeft") prevSlide();
+    if (e.key === "ArrowRight") nextSlide();
+  });
+
+  dotContainer.addEventListener("click", function (e) {
+    e.preventDefault();
+    // matching strategy
+    if (!e.target.classList.contains("dots__dot")) return;
+
+    curSlide = e.target.dataset.slide * -1;
 
     goToSlide(curSlide);
+  });
+};
 
-    const nextSlide = function () {
-      if (curSlide === maxSlide * -1) {
-        curSlide = 0;
-      } else {
-        curSlide--;
-      }
-      goToSlide(curSlide);
-    };
+///////////////////
 
-    const prevSlide = function () {
-      if (curSlide === 0) {
-        curSlide = maxSlide * -1;
-      } else curSlide++;
-      goToSlide(curSlide);
-    };
+// TogglAPI / Simple clock
+const togglAPI = function () {
+  function getTime() {
+    const clock = document.querySelector(".toggl__img");
+    const curTime = new Date();
+    const hours = curTime.getHours();
+    const minutes = curTime.getMinutes();
 
-    bttnLeft.addEventListener("click", prevSlide);
-    bttnRight.addEventListener("click", nextSlide);
+    const formattedTime =
+      hours.toString().padStart(2, "0") +
+      ":" +
+      minutes.toString().padStart(2, "0");
 
-    document.addEventListener("keydown", function (e) {
-      e.preventDefault();
-      if (e.key === "ArrowLeft") prevSlide();
-      if (e.key === "ArrowRight") nextSlide();
+    clock.textContent = formattedTime;
+  }
+
+  setInterval(getTime, 1000);
+
+  // Toggl API Clock
+
+  const apiToken = "f4d69d308e97e4bf700051591f16876f";
+
+  async function getTimeLearning(apiToken) {
+    const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+      },
     });
+    const data = await response.json();
+    console.log(data);
+    return data.data;
+  }
 
-    dotContainer.addEventListener("click", function (e) {
-      e.preventDefault();
-      // matching strategy
-      if (!e.target.classList.contains("dots__dot")) return;
+  //getTimeLearning(apiToken);
 
-      curSlide = e.target.dataset.slide * -1;
-
-      goToSlide(curSlide);
-    });
-  };
-  slider();
-  ///////////////////
-
-  // TogglAPI / Simple clock
-  const togglAPI = function () {
-    function getTime() {
-      const clock = document.querySelector(".toggl__img");
-      const curTime = new Date();
-      const hours = curTime.getHours();
-      const minutes = curTime.getMinutes();
-
-      const formattedTime =
-        hours.toString().padStart(2, "0") +
-        ":" +
-        minutes.toString().padStart(2, "0");
-
-      clock.textContent = formattedTime;
-    }
-
-    setInterval(getTime, 1000);
-
-    // Toggl API Clock
-
-    const apiToken = "f4d69d308e97e4bf700051591f16876f";
-
-    async function getTimeLearning(apiToken) {
-      const response = await fetch("https://api.track.toggl.com/api/v9/me", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-        },
-      });
-      const data = await response.json();
-      console.log(data);
-      return data.data;
-    }
-
-    //getTimeLearning(apiToken);
-
-    async function getMeInfo() {
-      const response = await fetch("https://api.track.toggl.com/api/v9/me", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${btoa(`
+  async function getMeInfo() {
+    const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${btoa(`
         <kondzikaoko@gmail.com>:<jOo&&Uk*RP90>`)}`,
-        },
+      },
+    })
+      .then((resp) => resp.json())
+      .then((json) => {
+        console.log(json);
       })
-        .then((resp) => resp.json())
-        .then((json) => {
-          console.log(json);
-        })
-        .catch((err) => console.error(err));
-    }
-    //getMeInfo();
-  };
-  // togglAPI();
+      .catch((err) => console.error(err));
+  }
+  //getMeInfo();
+};
+// togglAPI();
+
+function handleLargeScreen() {
+  // Enable or modify functions specific to larger screens
+  // Example: Add event listeners or modify functionality
+  navbarBehaviour();
+  stickyNavFunction();
+  sectionsReveal();
+  slider();
 }
 
 function handleSmallScreen() {
   // Modify or disable functions specific to smaller screens
   // Example: Remove event listeners or modify functionality
+  sectionsReveal();
 }
 
 // Check screen size on page load and resize
 function checkScreenSize() {
-  if (window.innerWidth <= 800) {
+  if (window.innerWidth <= 1200) {
     handleSmallScreen();
   } else {
     handleLargeScreen();

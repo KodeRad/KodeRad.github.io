@@ -382,26 +382,6 @@ contact__item */
 }
 
 /* CHUCK NORRIS */
-/* .section__joke {
-  display: relative;
-}
-.chuck__img {
-  position: relative;
-  left: -50%;
-  width: 50%;
-  height: auto;
-}
-
-.chucks__joke {
-  word-wrap: normal;
-  width: 35%;
-  height: 50%;
-  position: absolute;
-}
-
-.btn__joke {
-  
-} */
 
 .section__joke {
   align-items: center;
@@ -415,6 +395,7 @@ contact__item */
 }
 
 .chuck__img {
+  border-radius: 20px;
   position: relative;
   right: 20%;
   width: 50%; /* Adjust the width as needed */
