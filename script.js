@@ -204,7 +204,7 @@ function handleLargeScreen() {
   slider();
   ///////////////////
 
-  // TogglAPI
+  // TogglAPI / Simple clock
   const togglAPI = function () {
     function getTime() {
       const clock = document.querySelector(".toggl__img");
@@ -239,7 +239,7 @@ function handleLargeScreen() {
       return data.data;
     }
 
-    getTimeLearning(apiToken);
+    //getTimeLearning(apiToken);
 
     async function getMeInfo() {
       const response = await fetch("https://api.track.toggl.com/api/v9/me", {
@@ -256,9 +256,9 @@ function handleLargeScreen() {
         })
         .catch((err) => console.error(err));
     }
-    getMeInfo();
+    //getMeInfo();
   };
-  //togglAPI();
+  togglAPI();
 }
 
 function handleSmallScreen() {
@@ -268,7 +268,7 @@ function handleSmallScreen() {
 
 // Check screen size on page load and resize
 function checkScreenSize() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 800) {
     handleSmallScreen();
   } else {
     handleLargeScreen();
@@ -280,3 +280,26 @@ window.addEventListener("load", checkScreenSize);
 
 // Call checkScreenSize on window resize
 window.addEventListener("resize", checkScreenSize);
+
+const chuckAPI = async function () {
+  const url = "https://api.chucknorris.io/jokes/random";
+
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    const joke = result.value;
+    document.querySelector(".joke").textContent = `"${joke}"`;
+    return result.value;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+document.querySelector(".btn__joke").addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("click");
+  chuckAPI();
+});
+chuckAPI();
+
+// insertAdjacentHTML (after clicking GET CHUCK's JOKE) with Joke and Chuck's face
