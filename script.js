@@ -98,19 +98,18 @@ const stickyNavFunction = function () {
     rootMargin: "30px",
   });
   section1Observer.observe(section1);
-
-  // Reveling sections
-  // 1. section observer
-  // 2. for each section reveal current section
-  allSections.forEach((section) => {
-    section.classList.add("section--hidden");
-  });
 };
 
 ///////////////////////////////////
 // Sections reveal
+// 0. hide sections
+// 1. section observer
+// 2. for each section reveal current section
 
 const sectionsReveal = function () {
+  allSections.forEach((section) => {
+    section.classList.add("section--hidden");
+  });
   const revealSection = function (entries, observer) {
     const [entry] = entries;
 
@@ -284,6 +283,7 @@ function handleSmallScreen() {
   // Modify or disable functions specific to smaller screens
   // Example: Remove event listeners or modify functionality
   sectionsReveal();
+  slider();
 }
 
 // Check screen size on page load and resize
