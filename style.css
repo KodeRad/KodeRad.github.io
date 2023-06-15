@@ -468,7 +468,7 @@ contact__item */
 /* <600px, 601px, 768px, 992px, 1200px */
 
 /* CHANGE THE PXS LATER!!! */
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .wrapper__main {
     width: 100vh;
     margin: 0 auto;
@@ -487,6 +487,7 @@ contact__item */
   }
 
   .nav__links {
+    opacity: 0;
     padding: 0 0rem;
     margin: 0 auto;
   }
@@ -504,7 +505,7 @@ contact__item */
     width: 90%;
     height: auto;
     margin-left: 20px;
-    margin-top: 3rem;
+    margin-top: 10rem;
     margin-bottom: 2rem;
   }
 
@@ -530,7 +531,13 @@ contact__item */
   }
 
   .map {
-    margin-left: 190px;
+    /* position: relative;
+    align-self: center;
+    justify-content: center; */
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-left: 30%;
   }
 
   .scroll__img {
@@ -544,11 +551,23 @@ contact__item */
   /* SECTION 2 - MY SKILLS */
 
   .skills__imgs {
-    display: block;
+    display: relative;
+    /* justify-content: space-between;
+    align-items: center; */
+    /* margin-bottom: 5rem;*/
+    padding: 0 2rem;
+  }
+
+  .hours__img {
+    margin-top: 1rem;
+    margin-left: 4rem;
+    width: 30%;
+    height: auto;
+    align-self: center;
   }
 
   .skills__img {
-    width: 70vh;
+    width: 100%;
   }
 
   .toggl__img {
@@ -559,12 +578,26 @@ contact__item */
 
   /* SECTION 3 - MY PROJECTS */
 
-  .projects {
+  /*   .projects {
     display: block;
   }
 
   .projects__links {
     display: block;
+  }
+*/
+
+  .slider__btn--right {
+    right: 6%;
+    transform: translate(80%, -50%);
+    /* margin: 10rem 50rem; */
+    transition: transform 0s;
+  }
+  .slider__btn--left {
+    left: 6%;
+    transform: translate(50%, -50%);
+    /* margin: 10rem 50rem; */
+    transition: transform 0s;
   }
 
   /* SECTION 4 - CONTACT */
