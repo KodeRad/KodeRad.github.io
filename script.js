@@ -288,7 +288,7 @@ function handleSmallScreen() {
 
 // Check screen size on page load and resize
 function checkScreenSize() {
-  if (window.innerWidth <= 1200) {
+  if (window.innerWidth <= 1000) {
     handleSmallScreen();
   } else {
     handleLargeScreen();

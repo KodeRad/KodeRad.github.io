@@ -468,7 +468,7 @@ contact__item */
 /* <600px, 601px, 768px, 992px, 1200px */
 
 /* CHANGE THE PXS LATER!!! */
-@media (max-width: 1200px) {
+@media (max-width: 600px) {
   .wrapper__main {
     width: 100vh;
     margin: 0 auto;
