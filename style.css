@@ -430,6 +430,7 @@ contact__item */
   height: auto;
   position: absolute;
   right: 25%;
+  margin-top: 5rem;
 }
 
 .btn__joke {
