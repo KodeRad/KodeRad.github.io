@@ -467,7 +467,6 @@ contact__item */
 /* MOBILE VIEW */
 /* <600px, 601px, 768px, 992px, 1200px */
 
-/* CHANGE THE PXS LATER!!! */
 @media (max-width: 800px) {
   * {
     margin: 0;
@@ -489,10 +488,11 @@ contact__item */
     background-repeat: no-repeat;
     background-attachment: fixed;
     max-width: 100%;
+    overflow-x: hidden;
   }
 
   .wrapper__main {
-    width: 100vh;
+    width: 90vh;
     margin: 0 auto;
   }
   .header {
