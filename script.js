@@ -300,6 +300,7 @@ function handleLargeScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
+  togglAPI();
 }
 
 function handleSmallScreen() {
@@ -308,6 +309,7 @@ function handleSmallScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
+  togglAPI();
 }
 
 // Check screen size on page load and resize
