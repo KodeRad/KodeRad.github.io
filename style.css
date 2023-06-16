@@ -488,14 +488,18 @@ contact__item */
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* max-width: 100%; */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   /* GENERAL ELEMENTS */
+
+  .background {
+    width: 100vw;
+  }
 
   .wrapper__main {
     width: 100vw;
     /* max-width: 100%; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
   }
 
   .header {
@@ -511,8 +515,8 @@ contact__item */
   }
 
   .nav__logo {
-    width: 20%;
-    margin-left: 40%;
+    width: 30%;
+    margin-left: 0%;
   }
 
   .nav__links {
@@ -531,8 +535,8 @@ contact__item */
   /* SECTION 1 - HOME */
 
   .welcome__name {
-    width: 100vh;
-    max-width: 90%;
+    width: 90vh;
+    /* max-width: 90%; */
     height: auto;
     margin-left: 20px;
     margin-top: 10rem;
