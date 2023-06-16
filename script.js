@@ -237,7 +237,7 @@ const togglAPI = function () {
   const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
   async function getTimeLearning(apiToken) {
-    const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+    const response = await fetch("https://api.track.toggl.com/api/v9/time_entries", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -251,7 +251,7 @@ const togglAPI = function () {
 
   getTimeLearning(apiToken);
 
-  async function getMeInfo() {
+/*   async function getMeInfo() {
     const response = await fetch("https://api.track.toggl.com/api/v9/me", {
       method: "GET",
       headers: {
@@ -267,8 +267,7 @@ const togglAPI = function () {
       .catch((err) => console.error(err));
   }
   getMeInfo();
-};
-togglAPI();
+}; */
 
 ///////////////////////////////////
 
@@ -300,16 +299,16 @@ function handleLargeScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  togglAPI();
+  /*   togglAPI(); */
 }
 
 function handleSmallScreen() {
   // Modify or disable functions specific to smaller screens
   // Example: Remove event listeners or modify functionality
-  sectionsReveal();
+  //sectionsReveal();
   slider();
   chuckAPI();
-  togglAPI();
+  /* togglAPI(); */
 }
 
 // Check screen size on page load and resize
@@ -326,83 +325,3 @@ window.addEventListener("load", checkScreenSize);
 
 // Call checkScreenSize on window resize
 window.addEventListener("resize", checkScreenSize);
-
-// Learning
-
-// Promise without async await sugartax
-/* 
-const testPromise = new Promise((resolve, reject) => {
-  const equasion = 2 + 3;
-  if (equasion === 4) {
-    resolve("Good");
-  } else reject("Bad");
-});
-
-testPromise
-  .then((message) => console.log("then " + message))
-  .catch((message) => console.log("catch " + message));
- */
-// replacing callback functions with promises
-
-const userLeft = true;
-const userWatchingCatMeme = true;
-
-// PROMISE FUNCTION
-/* 
-const watchTutorialPromise = new Promise((resolve, reject) => {
-  if (userWatchingCatMeme)
-    reject({ name: "User Watching Cat Meme", message: "Konrad > Cat" });
-  if (userLeft) reject({ name: "userLeft", message: ";(" });
-
-  resolve("Thumbs up and Subscribe");
-});
-
-watchTutorialPromise
-  .then((message) => console.log("Success: " + message))
-  .catch((message) =>
-    console.log("Failure: " + message.name + " " + message.message)
-  );
- */
-// CALLBACK FUNCTION
-
-/* function watchTutorialCallback(callback, errorCallback) {
-  if (userLeft) {
-    errorCallback({
-      name: "User Left",
-      message: ":(",
-    });
-  } else if (userWatchingCatMeme) {
-    errorCallback({ name: "User Watching Cat Meme", message: "Konrad > Cat" });
-  } else callback("Thumbs up and Subscribe");
-}
-
-watchTutorialCallback(
-  (message) => {
-    console.log("Success: " + message);
-  },
-  (error) => {
-    console.log(error.name + " " + error.message);
-  }
-);
- */
-/* 
-const firstVid = new Promise((resolve, reject) => {
-  resolve("first vid recorded");
-});
-
-const secVid = new Promise((resolve, reject) => {
-  resolve("second vid recorded");
-});
-
-const thirdVid = new Promise((resolve, reject) => {
-  resolve("third vid recorded");
-});
-
-Promise.all([firstVid, secVid, thirdVid]).then((messeges) => {
-  console.log("Promise all: " + messeges);
-});
-
-Promise.race([firstVid, secVid, thirdVid]).then((message) => {
-  console.log("Race: " + message);
-});
- */

@@ -467,7 +467,7 @@ contact__item */
 /* MOBILE VIEW */
 /* <600px, 601px, 768px, 992px, 1200px */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   * {
     margin: 0;
     padding: 0;
