@@ -482,7 +482,7 @@ contact__item */
   }
 
   body {
-    background-image: url(/src/codeBackhround.jpg);
+    background-image: url(/src/codeBackground2.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -492,9 +492,10 @@ contact__item */
   }
 
   .wrapper__main {
-    width: 90vh;
+    width: 100vh;
     margin: 0 auto;
   }
+
   .header {
     border-top: 1px solid transparent;
     position: relative;
@@ -505,7 +506,7 @@ contact__item */
 
   .nav__logo {
     width: 20%;
-    margin-left: 0px;
+    margin-left: 40%;
   }
 
   .nav__links {
@@ -524,8 +525,8 @@ contact__item */
   /* SECTION 1 - HOME */
 
   .welcome__name {
-    width: 90vh;
-    max-width: 80%;
+    width: 100vh;
+    max-width: 90%;
     height: auto;
     margin-left: 20px;
     margin-top: 10rem;
@@ -538,6 +539,7 @@ contact__item */
 
   .myphoto__img {
     position: relative;
+    left: 8%;
     width: 100vh;
     height: auto;
     margin-left: 0px;
@@ -548,23 +550,25 @@ contact__item */
     width: 50vh;
     height: auto;
     position: absolute;
-    margin-left: 0rem;
-    margin-top: 5rem;
+    margin-left: -1rem;
+    margin-top: 4rem;
     z-index: 99;
   }
 
   .map {
-    /* position: relative;
+    position: relative;
     align-self: center;
-    justify-content: center; */
+    justify-content: center;
     display: flex;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
     border-radius: 20px;
-    margin-left: 30%;
+    left: 5%;
   }
 
   .scroll__img {
-    margin-left: -10px;
+    margin-left: 2.25%;
     width: 100vh;
   }
 
@@ -610,23 +614,42 @@ contact__item */
   }
 */
 
+  .anita_img {
+    width: 300px;
+    height: auto;
+  }
+
   .slider__btn--right {
     right: 6%;
-    transform: translate(80%, -50%);
+    transform: translate(150%, -10%);
     /* margin: 10rem 50rem; */
     transition: transform 0s;
   }
   .slider__btn--left {
     left: 6%;
-    transform: translate(50%, -50%);
+    transform: translate(-150%, -10%);
     /* margin: 10rem 50rem; */
     transition: transform 0s;
   }
 
+  .dots {
+    width: 14rem;
+    height: auto;
+    position: absolute;
+    bottom: 15%;
+    left: 45.5%;
+    /* transform: translate(-30%, -700%); */
+    display: flex;
+  }
+
   /* SECTION 4 - CONTACT */
 
+  .project__content {
+    position: relative;
+    left: -15%;
+  }
+
   .contact__item img {
-    padding-left: 0rem;
   }
 
   .linkedin__logo {

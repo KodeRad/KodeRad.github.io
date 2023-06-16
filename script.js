@@ -216,7 +216,7 @@ const slider = function () {
 
 // TogglAPI / Simple clock
 const togglAPI = function () {
-  function getTime() {
+  /*   function getTime() {
     const clock = document.querySelector(".toggl__img");
     const curTime = new Date();
     const hours = curTime.getHours();
@@ -230,7 +230,7 @@ const togglAPI = function () {
     clock.textContent = formattedTime;
   }
 
-  setInterval(getTime, 1000);
+  setInterval(getTime, 1000); */
 
   // Toggl API Clock
 
@@ -249,7 +249,7 @@ const togglAPI = function () {
     return data.data;
   }
 
-  //getTimeLearning(apiToken);
+  getTimeLearning(apiToken);
 
   async function getMeInfo() {
     const response = await fetch("https://api.track.toggl.com/api/v9/me", {
@@ -266,9 +266,9 @@ const togglAPI = function () {
       })
       .catch((err) => console.error(err));
   }
-  //getMeInfo();
+  getMeInfo();
 };
-// togglAPI();
+togglAPI();
 
 ///////////////////////////////////
 
@@ -324,3 +324,83 @@ window.addEventListener("load", checkScreenSize);
 
 // Call checkScreenSize on window resize
 window.addEventListener("resize", checkScreenSize);
+
+// Learning
+
+// Promise without async await sugartax
+/* 
+const testPromise = new Promise((resolve, reject) => {
+  const equasion = 2 + 3;
+  if (equasion === 4) {
+    resolve("Good");
+  } else reject("Bad");
+});
+
+testPromise
+  .then((message) => console.log("then " + message))
+  .catch((message) => console.log("catch " + message));
+ */
+// replacing callback functions with promises
+
+const userLeft = true;
+const userWatchingCatMeme = true;
+
+// PROMISE FUNCTION
+/* 
+const watchTutorialPromise = new Promise((resolve, reject) => {
+  if (userWatchingCatMeme)
+    reject({ name: "User Watching Cat Meme", message: "Konrad > Cat" });
+  if (userLeft) reject({ name: "userLeft", message: ";(" });
+
+  resolve("Thumbs up and Subscribe");
+});
+
+watchTutorialPromise
+  .then((message) => console.log("Success: " + message))
+  .catch((message) =>
+    console.log("Failure: " + message.name + " " + message.message)
+  );
+ */
+// CALLBACK FUNCTION
+
+/* function watchTutorialCallback(callback, errorCallback) {
+  if (userLeft) {
+    errorCallback({
+      name: "User Left",
+      message: ":(",
+    });
+  } else if (userWatchingCatMeme) {
+    errorCallback({ name: "User Watching Cat Meme", message: "Konrad > Cat" });
+  } else callback("Thumbs up and Subscribe");
+}
+
+watchTutorialCallback(
+  (message) => {
+    console.log("Success: " + message);
+  },
+  (error) => {
+    console.log(error.name + " " + error.message);
+  }
+);
+ */
+/* 
+const firstVid = new Promise((resolve, reject) => {
+  resolve("first vid recorded");
+});
+
+const secVid = new Promise((resolve, reject) => {
+  resolve("second vid recorded");
+});
+
+const thirdVid = new Promise((resolve, reject) => {
+  resolve("third vid recorded");
+});
+
+Promise.all([firstVid, secVid, thirdVid]).then((messeges) => {
+  console.log("Promise all: " + messeges);
+});
+
+Promise.race([firstVid, secVid, thirdVid]).then((message) => {
+  console.log("Race: " + message);
+});
+ */
