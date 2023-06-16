@@ -478,7 +478,7 @@ contact__item */
     color: whitesmoke;
     scroll-margin: 8rem;
     transition: transform 1.5s, opacity 0.5s;
-    max-width: 100%;
+    /*  max-width: 100%; */
   }
 
   body {
@@ -487,22 +487,28 @@ contact__item */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    max-width: 100%;
+    /* max-width: 100%; */
     overflow-x: hidden;
   }
+  /* GENERAL ELEMENTS */
 
   .wrapper__main {
-    width: 100vh;
+    width: 100vw;
+    /* max-width: 100%; */
     margin: 0 auto;
   }
 
   .header {
     border-top: 1px solid transparent;
     position: relative;
-    width: 100%;
+    width: 100vw;
   }
 
   /* NAVIGATION */
+
+  .nav {
+    width: 100vw;
+  }
 
   .nav__logo {
     width: 20%;
