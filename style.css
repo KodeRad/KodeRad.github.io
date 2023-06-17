@@ -510,10 +510,42 @@ contact__item */
     margin-top: -5%;
   }
 
+  .section {
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 5%;
+    background-color: rgb(40, 40, 40, 0.7);
+    transition: transform 1.5s, opacity 1s;
+  }
+
+  .section__title {
+    font: inherit, bold;
+    font-size: xx-large;
+    /* padding-top: 3rem;
+    margin-bottom: 3rem; */
+    margin: 0% 2%;
+    padding-top: 8%;
+  }
+
+  .section__description {
+    font: inherit;
+    font-size: large;
+    margin: 10% 2%;
+  }
+
+  .section__description__second {
+    font: inherit;
+    font-size: large;
+    margin: 10% 2%;
+    margin-top: -10%;
+  }
+
   /* NAVIGATION */
 
   .nav {
     width: 100vw;
+    height: 14vw;
   }
 
   .nav__logo {
@@ -537,16 +569,17 @@ contact__item */
   /* SECTION 1 - HOME */
 
   .welcome__name {
-    width: 95vw;
+    width: 93vw;
     /* max-width: 90%; */
     height: auto;
-    margin-left: 20px;
+    margin-left: 2.5%;
     margin-top: 32%;
     margin-bottom: 2rem;
   }
 
   .name__img__description {
-    padding-left: 30%;
+    padding-left: 50%;
+    font-size: large;
   }
 
   .myphoto__img {
@@ -560,10 +593,11 @@ contact__item */
 
   .paragraph__welcome {
     width: 50vw;
+    font-size: medium;
     height: auto;
     position: absolute;
     margin-left: 0rem;
-    margin-top: 5rem;
+    margin-top: 0rem;
     z-index: 99;
   }
 
@@ -593,14 +627,14 @@ contact__item */
     /* justify-content: space-between;
     align-items: center; */
     /* margin-bottom: 5rem;*/
-    width: 50vw;
-    padding: 0 2rem;
+    width: 60vw;
+    padding: 0 1rem;
   }
 
   .hours__img {
     margin-top: 1rem;
-    margin-left: 4rem;
-    width: 30%;
+    margin-left: 10%;
+    width: 25vw;
     height: auto;
     align-self: center;
   }
@@ -617,14 +651,79 @@ contact__item */
 
   /* SECTION 3 - MY PROJECTS */
 
-  /*   .projects {
-    display: block;
+  .projects {
+    position: relative;
+    display: flex;
+    height: 50vh;
+    margin: 0 auto;
+    font: inherit;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    overflow: hidden;
   }
 
-  .projects__links {
-    display: block;
+  .project {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 1s;
+
+    margin-top: 0%;
+    margin-left: 28%;
   }
-*/
+
+  .project__content {
+    margin: 0 0;
+    padding: 0 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .project__link {
+    text-decoration: none;
+  }
+
+  .project__title {
+    font: inherit;
+    font-size: 25px;
+    margin-bottom: 1rem;
+  }
+
+  .project__img {
+    height: 300px;
+    width: auto;
+    /* align-self: center; */
+  }
+
+  .project__description {
+    display: none;
+  }
+
+  .project__description {
+    text-transform: none;
+    font-weight: 400;
+  }
+
+  .slider__btn {
+    position: absolute;
+    top: 10%;
+    color: whitesmoke;
+    background-color: rgb(40, 40, 40);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10rem 5rem;
+    border-style: none;
+  }
 
   .anita_img {
     width: 300px;
