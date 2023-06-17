@@ -470,6 +470,7 @@ contact__item */
 @media (max-width: 900px) {
   * {
     margin: 0;
+    margin-left: 1.5px;
     padding: 0;
     box-sizing: inherit;
     font-family: "Open Sans", sans-serif;
@@ -478,7 +479,6 @@ contact__item */
     color: whitesmoke;
     scroll-margin: 8rem;
     transition: transform 1.5s, opacity 0.5s;
-    /*  max-width: 100%; */
   }
 
   body {
@@ -487,8 +487,9 @@ contact__item */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    width: 100vw;
     /* max-width: 100%; */
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
   }
   /* GENERAL ELEMENTS */
 
@@ -515,12 +516,12 @@ contact__item */
   }
 
   .nav__logo {
-    width: 30%;
+    width: 20%;
     margin-left: 0%;
   }
 
   .nav__links {
-    opacity: 0;
+    opacity: 1;
     padding: 0 0rem;
     margin: 0 auto;
   }
@@ -535,11 +536,11 @@ contact__item */
   /* SECTION 1 - HOME */
 
   .welcome__name {
-    width: 90vh;
+    width: 95vw;
     /* max-width: 90%; */
     height: auto;
     margin-left: 20px;
-    margin-top: 10rem;
+    margin-top: 20%;
     margin-bottom: 2rem;
   }
 
@@ -549,19 +550,19 @@ contact__item */
 
   .myphoto__img {
     position: relative;
-    left: 8%;
-    width: 100vh;
+    left: 6%;
+    width: 90vw;
     height: auto;
     margin-left: 0px;
     margin-top: 0px;
   }
 
   .paragraph__welcome {
-    width: 50vh;
+    width: 50vw;
     height: auto;
     position: absolute;
-    margin-left: -1rem;
-    margin-top: 4rem;
+    margin-left: 0rem;
+    margin-top: 5rem;
     z-index: 99;
   }
 
@@ -574,12 +575,11 @@ contact__item */
     width: 100%;
     max-width: 100%;
     border-radius: 20px;
-    left: 5%;
   }
 
   .scroll__img {
     margin-left: 2.25%;
-    width: 100vh;
+    width: 90vw;
   }
 
   /* SECTIONS - GENERAL ITEMS */
@@ -610,7 +610,7 @@ contact__item */
   .toggl__img {
     margin-top: 2rem;
     margin-left: 1rem;
-    width: 23vh;
+    width: 23vw;
   }
 
   /* SECTION 3 - MY PROJECTS */
