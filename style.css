@@ -470,7 +470,6 @@ contact__item */
 @media (max-width: 900px) {
   * {
     margin: 0;
-    margin-left: 1.5px;
     padding: 0;
     box-sizing: inherit;
     font-family: "Open Sans", sans-serif;
@@ -512,7 +511,7 @@ contact__item */
   /* NAVIGATION */
 
   .nav {
-    width: 99vw;
+    width: 100vw;
   }
 
   .nav__logo {
@@ -701,7 +700,7 @@ contact__item */
     justify-content: space-between;
     align-items: center;
     background-color: rgb(40, 40, 40);
-    width: 99%;
+    width: 100vw;
     height: 5rem;
   }
 
