@@ -498,6 +498,7 @@ contact__item */
 
   .wrapper__main {
     width: 100vw;
+    overflow-x: hidden;
     /* max-width: 100%; */
     /* margin: 0 auto; */
   }
@@ -506,6 +507,7 @@ contact__item */
     border-top: 1px solid transparent;
     position: relative;
     width: 100vw;
+    margin-top: -5%;
   }
 
   /* NAVIGATION */
@@ -539,12 +541,12 @@ contact__item */
     /* max-width: 90%; */
     height: auto;
     margin-left: 20px;
-    margin-top: 20%;
+    margin-top: 32%;
     margin-bottom: 2rem;
   }
 
   .name__img__description {
-    padding-left: 24rem;
+    padding-left: 30%;
   }
 
   .myphoto__img {
@@ -591,6 +593,7 @@ contact__item */
     /* justify-content: space-between;
     align-items: center; */
     /* margin-bottom: 5rem;*/
+    width: 50vw;
     padding: 0 2rem;
   }
 
