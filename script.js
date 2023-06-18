@@ -308,7 +308,7 @@ function handleLargeScreen() {
 function handleSmallScreen() {
   // Modify or disable functions specific to smaller screens
   // Example: Remove event listeners or modify functionality
-  //sectionsReveal();
+  sectionsReveal();
   slider();
   chuckAPI();
   /* togglAPI(); */
