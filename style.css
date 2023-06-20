@@ -844,6 +844,7 @@ contact__item */
   /* FOOTER */
 
   .footer__content {
+    overflow: auto;
     display: flex;
     justify-content: left;
     align-items: left;
