@@ -11,7 +11,7 @@
 }
 
 body {
-  background-image: url(/src/codeBackground2.jpg);
+  background-image: url(/imgs/codeBackground2.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -315,7 +315,7 @@ body {
   height: auto;
   position: absolute;
   bottom: 15%;
-  left: 47%;
+  left: 45.5%;
   /* transform: translate(-30%, -700%); */
   display: flex;
 }
@@ -481,7 +481,7 @@ contact__item */
   }
 
   body {
-    background-image: url(/src/codeBackground2.jpg);
+    background-image: url(/imgs/codeBackground2.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
