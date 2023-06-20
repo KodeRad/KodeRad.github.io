@@ -122,7 +122,7 @@ const sectionsReveal = function () {
 
   const sectionAllObserver = new IntersectionObserver(revealSection, {
     root: null,
-    threshold: 0.1,
+    threshold: 0.05,
     rootMargin: "0px",
   });
   allSections.forEach((section) => {

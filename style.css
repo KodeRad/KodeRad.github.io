@@ -124,7 +124,7 @@ body {
 
 .map {
   display: flex;
-  overflow: hidden;
+  overflow: auto;
   border-radius: 20px;
   margin-left: 0px;
   margin-top: 2rem;
@@ -132,7 +132,7 @@ body {
 
 .map .map__wrapper {
   border-radius: 20px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .scroll__img {
@@ -217,7 +217,7 @@ body {
   font: inherit;
   /* justify-content: space-between; */
   /* align-items: center; */
-  overflow: hidden;
+  overflow: auto;
 }
 
 .project {
@@ -485,7 +485,7 @@ contact__item */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     width: 100vw;
     /* max-width: 100%; */
     overflow-x: auto;
@@ -498,7 +498,7 @@ contact__item */
 
   .wrapper__main {
     width: 100vw;
-    overflow-x: hidden;
+    overflow-x: auto;
     /* max-width: 100%; */
     /* margin: 0 auto; */
   }
@@ -606,7 +606,7 @@ contact__item */
     align-self: center;
     justify-content: center;
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     width: 100%;
     max-width: 100%;
     border-radius: 20px;
@@ -659,7 +659,7 @@ contact__item */
     font: inherit;
     /* justify-content: space-between; */
     /* align-items: center; */
-    overflow: hidden;
+    overflow: auto;
   }
 
   .project {
