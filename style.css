@@ -124,7 +124,7 @@ body {
 
 .map {
   display: flex;
-  overflow: auto;
+  overflow: hidden;
   border-radius: 20px;
   margin-left: 0px;
   margin-top: 2rem;
@@ -132,7 +132,7 @@ body {
 
 .map .map__wrapper {
   border-radius: 20px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .scroll__img {
@@ -217,7 +217,7 @@ body {
   font: inherit;
   /* justify-content: space-between; */
   /* align-items: center; */
-  overflow: auto;
+  overflow: hidden;
 }
 
 .project {
@@ -485,10 +485,11 @@ contact__item */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     width: 100vw;
     /* max-width: 100%; */
-    overflow-x: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
   /* GENERAL ELEMENTS */
 
@@ -498,7 +499,7 @@ contact__item */
 
   .wrapper__main {
     width: 100vw;
-    overflow-x: auto;
+    overflow-x: hidden;
     /* max-width: 100%; */
     /* margin: 0 auto; */
   }
@@ -606,7 +607,7 @@ contact__item */
     align-self: center;
     justify-content: center;
     display: flex;
-    overflow: auto;
+    overflow: hidden;
     width: 100%;
     max-width: 100%;
     border-radius: 20px;
@@ -659,7 +660,7 @@ contact__item */
     font: inherit;
     /* justify-content: space-between; */
     /* align-items: center; */
-    overflow: auto;
+    overflow: hidden;
   }
 
   .project {
@@ -812,15 +813,22 @@ contact__item */
     margin-top: 20px;
   }
 
+  .chuck__img {
+    border-radius: 20px;
+    position: relative;
+    right: 10%;
+    width: 80%;
+  }
+
   .chucks__joke {
     display: flex;
     align-items: center;
     justify-content: center;
     word-wrap: normal;
-    width: 35%;
+    width: 100%;
     height: auto;
-    position: absolute;
-    right: 9%;
+    position: relative;
+    right: 12%;
     margin-top: 5rem;
   }
 
@@ -850,7 +858,7 @@ contact__item */
     position: absolute;
     font-size: large;
     right: 20%;
-    margin-bottom: 2.75vh;
+    margin-bottom: 3.25vh;
   }
 
   .footer__nav__list {
