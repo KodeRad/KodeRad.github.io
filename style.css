@@ -827,10 +827,10 @@ contact__item */
     align-items: center;
     justify-content: center;
     word-wrap: normal;
-    width: 35%;
+    width: 42%;
     height: auto;
     position: absolute;
-    right: 12%;
+    right: 9%;
     margin-top: 5rem;
   }
 
@@ -866,22 +866,14 @@ contact__item */
 
   .footer__nav__list {
     padding: 0 1rem;
-
     align-items: center;
     display: flex;
     list-style: none;
-    margin-left: 50rem;
+    margin-left: 0rem;
     text-align: center;
     text-decoration: none;
-  }
-
-  .footer__nav__list li a {
     opacity: 0;
-    margin-left: 0rem;
-    text-transform: uppercase;
-    color: inherit;
-    text-decoration: none;
-    font: inherit;
+    pointer-events: none;
   }
 
   .footer__logo {

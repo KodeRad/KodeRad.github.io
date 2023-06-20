@@ -250,7 +250,18 @@ const chuckAPI = async function () {
     const response = await fetch(url);
     const result = await response.json();
     const joke = result.value;
-    if (joke.includes("black", "sperm", "rectum", "dick", "urine")) return;
+    if (
+      joke.includes(
+        "black",
+        "sperm",
+        "rectum",
+        "dick",
+        "urine",
+        "semen",
+        "penis"
+      )
+    )
+      return;
     document.querySelector(".joke").textContent = `"${joke}"`;
     return result.value;
   } catch (error) {
