@@ -215,22 +215,7 @@ const slider = function () {
 ///////////////////
 
 // TogglAPI / Simple clock
-const togglAPI = function () {
-  /*   function getTime() {
-    const clock = document.querySelector(".toggl__img");
-    const curTime = new Date();
-    const hours = curTime.getHours();
-    const minutes = curTime.getMinutes();
-
-    const formattedTime =
-      hours.toString().padStart(2, "0") +
-      ":" +
-      minutes.toString().padStart(2, "0");
-
-    clock.textContent = formattedTime;
-  }
-
-  setInterval(getTime, 1000); */
+/* const togglAPI = function () {
 
   // Toggl API Clock
 
@@ -253,24 +238,7 @@ const togglAPI = function () {
   }
 
   getTimeLearning(apiToken);
-
-  /*   async function getMeInfo() {
-    const response = await fetch("https://api.track.toggl.com/api/v9/me", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${btoa(`
-        <kondzikaoko@gmail.com>:<jOo&&Uk*RP90>`)}`,
-      },
-    })
-      .then((resp) => resp.json())
-      .then((json) => {
-        console.log(json);
-      })
-      .catch((err) => console.error(err));
-  }
-  getMeInfo();*/
-};
+}; */
 
 ///////////////////////////////////
 
@@ -295,8 +263,6 @@ document.querySelector(".btn__joke").addEventListener("click", function (e) {
 });
 
 function handleLargeScreen() {
-  // Enable or modify functions specific to larger screens
-  // Example: Add event listeners or modify functionality
   navbarBehaviour();
   stickyNavFunction();
   sectionsReveal();
@@ -306,9 +272,7 @@ function handleLargeScreen() {
 }
 
 function handleSmallScreen() {
-  // Modify or disable functions specific to smaller screens
-  // Example: Remove event listeners or modify functionality
-  sectionsReveal();
+  //sectionsReveal();
   slider();
   chuckAPI();
   /* togglAPI(); */
