@@ -488,7 +488,7 @@ contact__item */
     background-attachment: fixed;
     width: 100vw;
     /* max-width: 100%; */
-    overflow-x: hidden;
+    overflow-x: auto;
   }
   /* GENERAL ELEMENTS */
 
