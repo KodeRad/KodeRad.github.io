@@ -557,7 +557,7 @@ contact__item */
 
   .nav__links {
     opacity: 0;
-    margin-left: 50rem;
+    pointer-events: none;
   }
 
   .nav__link {

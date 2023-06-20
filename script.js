@@ -284,7 +284,7 @@ function handleLargeScreen() {
 }
 
 function handleSmallScreen() {
-  //sectionsReveal();
+  sectionsReveal();
   slider();
   chuckAPI();
   /* togglAPI(); */
