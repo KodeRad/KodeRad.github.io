@@ -392,6 +392,7 @@ contact__item */
   display: flex;
   align-items: center;
   margin-top: 20px;
+  position: relative;
 }
 
 .chuck__img {
@@ -402,15 +403,15 @@ contact__item */
 }
 
 .chucks__joke {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   word-wrap: normal;
   width: 35%;
+  max-width: 600px;
   height: auto;
   position: absolute;
-  right: 25%;
-  margin-top: 5rem;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  transition: transform 0s;
 }
 
 .btn__joke {
@@ -812,6 +813,7 @@ contact__item */
     display: flex;
     align-items: center;
     margin-top: 20px;
+    overflow: visible;
   }
 
   .chuck__img {
@@ -822,16 +824,14 @@ contact__item */
   }
 
   .chucks__joke {
-    /* //overflow: auto; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
     word-wrap: normal;
     width: 42%;
     height: auto;
     position: absolute;
-    right: 9%;
-    margin-top: 5rem;
+    right: 50%;
+    top: 50%;
+    transform: translate(-20%, -40%);
+    transition: transform 0s;
   }
 
   .btn__joke {

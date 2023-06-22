@@ -122,7 +122,7 @@ const sectionsReveal = function () {
 
   const sectionAllObserver = new IntersectionObserver(revealSection, {
     root: null,
-    threshold: 0.05,
+    threshold: 0,
     rootMargin: "0px",
   });
   allSections.forEach((section) => {
@@ -246,22 +246,23 @@ const slider = function () {
 const chuckAPI = async function () {
   const url = "https://api.chucknorris.io/jokes/random";
 
+  // Helper function for banned words
+  function checkForBan(array, words) {
+    const result = array.some((el) => words.includes(el));
+    return result;
+  }
+
   try {
     const response = await fetch(url);
     const result = await response.json();
     const joke = result.value;
-    if (
-      joke.includes(
-        "black",
-        "sperm",
-        "rectum",
-        "dick",
-        "urine",
-        "semen",
-        "penis"
-      )
-    )
-      return;
+    const jokeArr = joke.split(" ");
+    const bannedWords = [
+      "black",  "sperm",  "rectum",  "dick",  "urine",  "semen",  "penis",  "whore",  "whores",  "pussy",  "racism",  "mother", 'bitch', 'woman', 'cock']; // prettier-ignore
+
+    // guard clauses for banned words/length
+    if (checkForBan(jokeArr, bannedWords) && jokeArr.length > 37) chuckAPI();
+
     document.querySelector(".joke").textContent = `"${joke}"`;
     return result.value;
   } catch (error) {
@@ -292,7 +293,7 @@ function handleSmallScreen() {
 
 // Check screen size on page load and resize
 function checkScreenSize() {
-  if (window.innerWidth <= 1000) {
+  if (window.innerWidth <= 901) {
     handleSmallScreen();
   } else {
     handleLargeScreen();
@@ -302,5 +303,16 @@ function checkScreenSize() {
 // Call checkScreenSize on page load
 window.addEventListener("load", checkScreenSize);
 
-// Call checkScreenSize on window resize
-window.addEventListener("resize", checkScreenSize);
+// Call checkScreenSize on window resize DEBOUNCING
+
+function debounce(callback, delay) {
+  let timeoutId;
+  return function () {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(callback, delay);
+  };
+}
+
+window.addEventListener("resize", function () {
+  debounce(checkScreenSize, 500);
+});
