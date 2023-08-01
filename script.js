@@ -222,7 +222,7 @@ const togglAPI = function () {
 
   async function getTimeLearning(apiToken) {
     try {
-      const response = await fetch(
+      /* const response = await fetch(
         "https://api.track.toggl.com/api/v9/time_entries",
         {
           method: "GET",
@@ -232,6 +232,16 @@ const togglAPI = function () {
           },
         }
       );
+      const data = await response.json();
+      console.log(data);
+      return data.data; */
+      const response = await fetch("https://api.track.toggl.com/api/v9/me", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+        },
+      });
       const data = await response.json();
       console.log(data);
       return data.data;
