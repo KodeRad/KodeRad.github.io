@@ -239,9 +239,6 @@ const togglAPI = function () {
   getTimeLearning(apiToken);
 };
 
-togglAPI();
-console.log("18:46");
-
 ///////////////////////////////////
 
 // Chuck Norris
@@ -283,14 +280,16 @@ function handleLargeScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  /*   togglAPI(); */
+  togglAPI();
+  console.log("18:51");
 }
 
 function handleSmallScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  /* togglAPI(); */
+  togglAPI();
+  console.log("18:51");
 }
 
 // Check screen size on page load and resize
