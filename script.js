@@ -221,19 +221,23 @@ const togglAPI = function () {
   const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
   async function getTimeLearning(apiToken) {
-    const response = await fetch(
-      "https://api.track.toggl.com/api/v9/time_entries",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-        },
-      }
-    );
-    const data = await response.json();
-    console.log(data);
-    return data.data;
+    try {
+      const response = await fetch(
+        "https://api.track.toggl.com/api/v9/time_entries",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+      return data.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   getTimeLearning(apiToken);
