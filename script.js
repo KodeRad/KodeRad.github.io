@@ -215,8 +215,7 @@ const slider = function () {
 ///////////////////
 
 // TogglAPI / Simple clock
-/* const togglAPI = function () {
-
+const togglAPI = function () {
   // Toggl API Clock
 
   const apiToken = "f4d69d308e97e4bf700051591f16876f";
@@ -238,7 +237,9 @@ const slider = function () {
   }
 
   getTimeLearning(apiToken);
-}; */
+};
+
+togglAPI();
 
 ///////////////////////////////////
 
@@ -258,7 +259,7 @@ const chuckAPI = async function () {
     const joke = result.value;
     const jokeArr = joke.split(" ");
     const bannedWords = [
-      "black",  "sperm",  "rectum",  "dick",  "urine",  "semen",  "penis",  "whore",  "whores",  "pussy",  "racism",  "mother", 'bitch', 'woman', 'cock']; // prettier-ignore
+      "black",  "sperm",  "rectum",  "dick",  "urine",  "semen",  "penis",  "whore",  "whores",  "pussy",  "racism",  "mother", 'bitch', 'woman', 'cock', 'women','cum']; // prettier-ignore
 
     // guard clauses for banned words/length
     if (checkForBan(jokeArr, bannedWords) && jokeArr.length > 37) chuckAPI();
