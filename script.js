@@ -240,6 +240,7 @@ const togglAPI = function () {
 };
 
 togglAPI();
+console.log("18:46");
 
 ///////////////////////////////////
 
