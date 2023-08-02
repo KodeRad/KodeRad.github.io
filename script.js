@@ -220,18 +220,20 @@ const togglAPI = function () {
 
   const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
+  const sinceTimestamp = 1654041600; // "01-06-2022"
+  const queryParams = new URLSearchParams({ since: sinceTimestamp }).toString();
+
+  const url = `https://api.track.toggl.com/api/v9/me/time_entries?${queryParams}`;
+
   async function getTimeLearning(apiToken) {
     try {
-      const response = await fetch(
-        "https://api.track.toggl.com/api/v9/me/time_entries",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-          },
-        }
-      );
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+        },
+      });
       const data = await response.json();
       console.log(data);
       return data.data;
