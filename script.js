@@ -222,19 +222,6 @@ const togglAPI = function () {
 
   async function getTimeLearning(apiToken) {
     try {
-      /* const response = await fetch(
-        "https://api.track.toggl.com/api/v9/time_entries",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-          },
-        }
-      );
-      const data = await response.json();
-      console.log(data);
-      return data.data; */
       const response = await fetch("https://api.track.toggl.com/api/v9/me", {
         method: "GET",
         headers: {
@@ -295,7 +282,6 @@ function handleLargeScreen() {
   slider();
   chuckAPI();
   togglAPI();
-  console.log("18:51");
 }
 
 function handleSmallScreen() {
@@ -303,7 +289,6 @@ function handleSmallScreen() {
   slider();
   chuckAPI();
   togglAPI();
-  console.log("18:51");
 }
 
 // Check screen size on page load and resize
