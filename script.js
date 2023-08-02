@@ -225,10 +225,17 @@ const togglAPI = function () {
 
   const url = `https://api.track.toggl.com/api/v9/me/time_entries?${queryParams}`;
 
+  const summaryUrl = `https://api.track.toggl.com/reports/api/v3/workspace/337752/projects/155021285/summary`;
+
   async function getTimeLearning(apiToken) {
     try {
-      const response = await fetch(url, {
-        method: "GET",
+      const response = await fetch(summaryUrl, {
+        method: "POST", // changed from GET, and added BODY
+        body: {
+          end_date: new Date().toISOString().slice(0, 10),
+          startTime: "",
+          start_date: "2022-06-01",
+        },
         headers: {
           "Content-Type": "application/json",
           Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
