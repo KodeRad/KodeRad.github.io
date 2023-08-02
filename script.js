@@ -225,7 +225,7 @@ const togglAPI = function () {
 
   const url = `https://api.track.toggl.com/api/v9/me/time_entries?${queryParams}`;
 
-  const summaryUrl = `https://api.track.toggl.com/reports/api/v3/workspace/337752/projects/155021285/summary`;
+  const summaryUrl = `https://api.track.toggl.com/reports/api/v3/workspace/{337752}/projects/{155021285}/summary`;
 
   async function getTimeLearning(apiToken) {
     try {
