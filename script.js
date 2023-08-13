@@ -218,7 +218,7 @@ const togglAPI = function () {
   // const url = `https://api.track.toggl.com/api/v9/workspaces/${workspaceID}/projects`;
 
   // GET me
-  const url = "https://api.track.toggl.com/api/v9/me";
+  const url = "https://api.track.toggl.com/api/v9/me?with_related_data=true";
 
   async function getTimeLearning(apiToken) {
     try {
