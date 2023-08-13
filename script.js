@@ -235,7 +235,7 @@ const togglAPI = function () {
         },
       });
       const data = await response.json();
-      console.log(data);
+      console.log(data.projects[8].actual_hours);
     } catch (error) {
       console.error(error);
     }
