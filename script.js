@@ -230,7 +230,7 @@ const togglAPI = function () {
   async function getTimeLearning(apiToken) {
     try {
       const response = await fetch(summaryUrl, {
-        method: "POST", // changed from GET, and added BODY
+        method: "GET", // changed from GET, and added BODY
         body: {
           end_date: new Date().toISOString().slice(0, 10),
           startTime: "0",
