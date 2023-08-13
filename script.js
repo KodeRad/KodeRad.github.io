@@ -1,24 +1,17 @@
 "use strict";
 
-import { Toggl } from "toggl-track";
-
 // Selectors:
 // Setions:
 const section1 = document.querySelector("#section--1");
-const section2 = document.querySelector("#section--2");
-const section3 = document.querySelector("#section--3");
-const section4 = document.querySelector("#section--4");
 const allSections = document.querySelectorAll(".section");
 
 // Navbars:
 const nav = document.querySelector(".nav");
 const navLinks = document.querySelector(".nav__links");
-const footer = document.querySelector(".footer");
 const footerLinks = document.querySelector(".footer__nav__list");
 const menus = document.querySelectorAll(".menu");
 
 // Others selectors:
-const allElements = document.querySelector("*");
 const scrollDownImg = document.querySelector(".scroll__img");
 const dotContainer = document.querySelector(".dots");
 
@@ -218,36 +211,31 @@ const togglAPI = function () {
 
   const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
-  const url = `https://api.track.toggl.com/reports/api/v3/workspace/337752/projects/155021285/summary`;
+  const workspaceID = "337752";
+  const projectID = "155021285";
+
+  const url = `https://api.track.toggl.com/api/v9/workspaces/${workspaceID}/projects`;
 
   async function getTimeLearning(apiToken) {
-    // try {
-    //   const response = await fetch(summaryUrl, {
-    //     method: "POST", // changed from GET, and added BODY
-    //     body: JSON.stringify({
-    //       end_date: new Date().toISOString().slice(0, 10),
-    //       startTime: "0",
-    //       start_date: "2022-06-01",
-    //     }),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-    //     },
-    //   });
-    //   const data = await response.json();
-    //   console.log(data);
-    // } catch (error) {
-    //   console.error(error);
-
-    const toggl = new Toggl({
-      auth: {
-        token: process.env.TOGGL_TRACK_API_TOKEN,
-      },
-    });
-    const entries = await toggl.timeEntry.list();
-    console.log(entries);
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        // body: {
+        //   end_date: new Date().toISOString().slice(0, 10),
+        //   startTime: "0",
+        //   start_date: "2022-06-01",
+        // },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   }
-
   getTimeLearning(apiToken);
 };
 
