@@ -225,7 +225,7 @@ const togglAPI = function () {
       // DOM Manipulation
       document.getElementById(
         "skills_description"
-      ).textContent = `I have spent ${hours} hours (real time!) learning mainly JavaScript along with
+      ).textContent = `I have spent ${hours} hours (current time form API!) learning mainly JavaScript along with
       HTML and CSS. Thanks to that commitment I believe I will bring a lot
       to the table if we ever met business-wise.`;
     } catch (error) {
