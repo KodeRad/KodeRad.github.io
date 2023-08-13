@@ -288,14 +288,14 @@ function handleLargeScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  // togglAPI();
+  togglAPI();
 }
 
 function handleSmallScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  // togglAPI();
+  togglAPI();
 }
 
 // Check screen size on page load and resize
