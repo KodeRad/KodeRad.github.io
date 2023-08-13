@@ -224,24 +224,41 @@ const togglAPI = function () {
   const summaryUrl = `https://api.track.toggl.com/reports/api/v3/workspace/337752/projects/155021285/summary`;
 
   async function getTimeLearning(apiToken) {
-    try {
-      const response = await fetch(summaryUrl, {
-        method: "POST", // changed from GET, and added BODY
-        body: JSON.stringify({
-          end_date: new Date().toISOString().slice(0, 10),
-          startTime: "0",
-          start_date: "2022-06-01",
-        }),
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-        },
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
+    // try {
+    //   const response = await fetch(summaryUrl, {
+    //     method: "POST", // changed from GET, and added BODY
+    //     body: JSON.stringify({
+    //       end_date: new Date().toISOString().slice(0, 10),
+    //       startTime: "0",
+    //       start_date: "2022-06-01",
+    //     }),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+    //     },
+    //   });
+    //   const data = await response.json();
+    //   console.log(data);
+    // } catch (error) {
+    //   console.error(error);
+    // }
+    fetch(summaryUrl, {
+      method: "POST",
+      body: {
+        end_date: new Date().toISOString().slice(0, 10),
+        startTime: "0",
+        start_date: "2022-06-01",
+      },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+      },
+    })
+      .then((resp) => resp.json())
+      .then((json) => {
+        console.log(json);
+      })
+      .catch((err) => console.error(err));
   }
 
   getTimeLearning(apiToken);
