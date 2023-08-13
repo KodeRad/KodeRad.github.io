@@ -1,9 +1,5 @@
 "use strict";
 
-/* alert(
-  "Site still in progress. Come back in a couple of days to see what's changed! 😃"
-); */
-
 // Selectors:
 // Setions:
 const section1 = document.querySelector("#section--1");
@@ -230,7 +226,7 @@ const togglAPI = function () {
   async function getTimeLearning(apiToken) {
     try {
       const response = await fetch(summaryUrl, {
-        method: "GET", // changed from GET, and added BODY
+        method: "POST", // changed from GET, and added BODY
         body: {
           end_date: new Date().toISOString().slice(0, 10),
           startTime: "0",
@@ -243,7 +239,6 @@ const togglAPI = function () {
       });
       const data = await response.json();
       console.log(data);
-      return data.data;
     } catch (error) {
       console.error(error);
     }
