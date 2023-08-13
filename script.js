@@ -205,37 +205,29 @@ const slider = function () {
 
 ///////////////////
 
-// TogglAPI
+// Toggl API hours spent programming
 const togglAPI = function () {
-  // Toggl API Clock
-
   const apiToken = "f4d69d308e97e4bf700051591f16876f";
-
-  const workspaceID = "337752";
-  const projectID = "155021285";
-
-  // GET projects
-  // const url = `https://api.track.toggl.com/api/v9/workspaces/${workspaceID}/projects`;
-
-  // GET me
   const url = "https://api.track.toggl.com/api/v9/me?with_related_data=true";
 
   async function getTimeLearning(apiToken) {
     try {
       const response = await fetch(url, {
         method: "GET",
-        // body: {
-        //   end_date: new Date().toISOString().slice(0, 10),
-        //   startTime: "0",
-        //   start_date: "2022-06-01",
-        // },
         headers: {
           "Content-Type": "application/json",
           Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
         },
       });
       const data = await response.json();
-      console.log(data.projects[8].actual_hours);
+      const hours = data.projects[8].actual_hours;
+
+      // DOM Manipulation
+      document.getElementById(
+        "skills_description"
+      ).textContent = `I have spent ${hours} hours learning mainly JavaScript along with
+      HTML and CSS. Thanks to that commitment I believe I will bring a lot
+      to the table if we ever met business-wise.`;
     } catch (error) {
       console.error(error);
     }
