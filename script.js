@@ -210,7 +210,7 @@ const slider = function () {
 
 ///////////////////
 
-// TogglAPI / Simple clock
+// TogglAPI
 const togglAPI = function () {
   // Toggl API Clock
 
@@ -227,11 +227,11 @@ const togglAPI = function () {
     try {
       const response = await fetch(summaryUrl, {
         method: "POST", // changed from GET, and added BODY
-        body: {
+        body: JSON.stringify({
           end_date: new Date().toISOString().slice(0, 10),
           startTime: "0",
           start_date: "2022-06-01",
-        },
+        }),
         headers: {
           "Content-Type": "application/json",
           Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
@@ -265,7 +265,7 @@ const chuckAPI = async function () {
     const joke = result.value;
     const jokeArr = joke.split(" ");
     const bannedWords = [
-      "black",  "sperm",  "rectum",  "dick",  "urine",  "semen",  "penis",  "whore",  "whores",  "pussy",  "racism",  "mother", 'bitch', 'woman', 'cock', 'women','cum']; // prettier-ignore
+      "black",  "sperm",  "rectum",  "dick",  "urine",  "semen",  "penis",  "whore",  "whores",  "pussy",  "racism",  "mother", 'bitch', 'woman', 'cock', 'women', 'cum']; // prettier-ignore
 
     // guard clauses for banned words/length
     if (checkForBan(jokeArr, bannedWords) && jokeArr.length > 37) chuckAPI();
@@ -288,14 +288,14 @@ function handleLargeScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  togglAPI();
+  // togglAPI();
 }
 
 function handleSmallScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  togglAPI();
+  // togglAPI();
 }
 
 // Check screen size on page load and resize
