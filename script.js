@@ -1,5 +1,7 @@
 "use strict";
 
+import { Toggl } from "toggl-track";
+
 // Selectors:
 // Setions:
 const section1 = document.querySelector("#section--1");
@@ -74,7 +76,7 @@ const navbarBehaviour = function () {
 // Sticky Navigation:
 
 const stickyNavFunction = function () {
-  const stickyNav = function (entries, observer) {
+  const stickyNav = function (entries) {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) {
         nav.classList.add("sticky");
@@ -216,12 +218,7 @@ const togglAPI = function () {
 
   const apiToken = "f4d69d308e97e4bf700051591f16876f";
 
-  const sinceTimestamp = 1654041600; // "01-06-2022"
-  const queryParams = new URLSearchParams({ since: sinceTimestamp }).toString();
-
-  const url = `https://api.track.toggl.com/api/v9/me/time_entries?${queryParams}`;
-
-  const summaryUrl = `https://api.track.toggl.com/reports/api/v3/workspace/337752/projects/155021285/summary`;
+  const url = `https://api.track.toggl.com/reports/api/v3/workspace/337752/projects/155021285/summary`;
 
   async function getTimeLearning(apiToken) {
     // try {
@@ -241,24 +238,14 @@ const togglAPI = function () {
     //   console.log(data);
     // } catch (error) {
     //   console.error(error);
-    // }
-    fetch(summaryUrl, {
-      method: "POST",
-      body: {
-        end_date: new Date().toISOString().slice(0, 10),
-        startTime: "0",
-        start_date: "2022-06-01",
+
+    const toggl = new Toggl({
+      auth: {
+        token: process.env.TOGGL_TRACK_API_TOKEN,
       },
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
-      },
-    })
-      .then((resp) => resp.json())
-      .then((json) => {
-        console.log(json);
-      })
-      .catch((err) => console.error(err));
+    });
+    const entries = await toggl.timeEntry.list();
+    console.log(entries);
   }
 
   getTimeLearning(apiToken);
