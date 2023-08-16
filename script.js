@@ -1,5 +1,4 @@
 "use strict";
-import { api_token } from "./config";
 
 // Selectors:
 // Setions:
@@ -208,7 +207,7 @@ const slider = function () {
 
 // Toggl API hours spent programming
 const togglAPI = function () {
-  const apiToken = api_token;
+  const apiToken = "f4d69d308e97e4bf700051591f16876f";
   const url = "https://api.track.toggl.com/api/v9/me?with_related_data=true";
 
   async function getTimeLearning(apiToken) {
