@@ -1,4 +1,5 @@
 # Untracked files:
 node_modules
 dist
+config.js
 .DS_Store
