@@ -206,23 +206,17 @@ const slider = function () {
 ///////////////////
 
 // Toggl API hours spent programming
-const togglAPI = async function () {
-  const apiFetch = await fetch("http://localhost:8080/toggl", {
-    method: "GET",
-  });
-
-  const apiData = await apiFetch.json();
-  const APIKey = apiData.API;
-
+const togglAPI = function () {
+  const apiKey = process.env.API_KEY;
   const url = "https://api.track.toggl.com/api/v9/me?with_related_data=true";
 
-  async function getTimeLearning(apiToken) {
+  async function getTimeLearning() {
     try {
       const response = await fetch(url, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Basic ${btoa(`${apiToken}:api_token`)}`,
+          Authorization: `Basic ${btoa(`${apiKey}:api_token`)}`,
         },
       });
       const data = await response.json();
@@ -238,7 +232,7 @@ const togglAPI = async function () {
       console.error(error);
     }
   }
-  getTimeLearning(APIKey);
+  getTimeLearning();
 };
 
 ///////////////////////////////////
