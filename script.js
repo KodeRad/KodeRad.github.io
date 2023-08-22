@@ -207,7 +207,7 @@ const slider = function () {
 
 // Toggl API hours spent programming
 const togglAPI = function () {
-  const apiKey = process.env.API_KEY;
+  const apiKey = "";
   const url = "https://api.track.toggl.com/api/v9/me?with_related_data=true";
 
   async function getTimeLearning() {
