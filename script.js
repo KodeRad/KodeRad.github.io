@@ -256,7 +256,7 @@ const getTime = function () {
       console.error(error);
     }
   }
-  getTime();
+  getTimeLearning();
 };
 
 ///////////////////////////////////
