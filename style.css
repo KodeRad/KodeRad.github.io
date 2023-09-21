@@ -587,6 +587,13 @@ body {
     padding: 0 1rem;
   }
 
+  .react__img {
+    width: 23vw;
+    margin-top: 0.75rem;
+    margin-left: 1.5rem;
+    align-self: center;
+  }
+
   .hours__img {
     margin-top: 1rem;
     margin-left: 10%;
