@@ -300,14 +300,14 @@ function handleLargeScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  getTime();
+  togglAPI();
 }
 
 function handleSmallScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  getTime();
+  togglAPI();
 }
 
 // Check screen size on page load and resize
