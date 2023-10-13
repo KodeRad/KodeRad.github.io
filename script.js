@@ -206,21 +206,15 @@ const slider = function () {
 ///////////////////
 
 // Toggl API hours spent programming
-const togglAPI = function () {
-  const apiKey = process.env.TOGGL_API_KEY;
-  const url = "https://api.track.toggl.com/api/v9/me?with_related_data=true";
+const getTime = function () {
+  const url = "https://koderad-api.onrender.com/toggl";
 
   async function getTimeLearning() {
     try {
       const response = await fetch(url, {
         method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${btoa(`${apiKey}:api_token`)}`,
-        },
       });
-      const data = await response.json();
-      const hours = data.projects[8].actual_hours;
+      const hours = await response.json();
 
       // DOM Manipulation
       document.getElementById(
@@ -234,30 +228,6 @@ const togglAPI = function () {
   }
   getTimeLearning();
 };
-
-// Toggl API hours spent programming
-// const getTime = function () {
-//   const url = "https://koderad-api.onrender.com/toggl";
-
-//   async function getTimeLearning() {
-//     try {
-//       const response = await fetch(url, {
-//         method: "GET",
-//       });
-//       const hours = await response.json();
-
-//       // DOM Manipulation
-//       document.getElementById(
-//         "skills_description"
-//       ).textContent = `I have spent ${hours} hours (current time form API!) learning mainly JavaScript along with
-//       HTML and CSS. Thanks to that commitment I believe I will bring a lot
-//       to the table if we ever met business-wise.`;
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   }
-//   getTimeLearning();
-// };
 
 ///////////////////////////////////
 
@@ -300,14 +270,12 @@ function handleLargeScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  togglAPI();
 }
 
 function handleSmallScreen() {
   sectionsReveal();
   slider();
   chuckAPI();
-  togglAPI();
 }
 
 // Check screen size on page load and resize
