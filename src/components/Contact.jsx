@@ -15,12 +15,13 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('elo mordo');
-    // fetch('/', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //   body: encode({ 'form-name': 'contact', name, email, message }),
-    // });
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', name, email, message }),
+    })
+      .then(() => alert('Message sent!'))
+      .catch((error) => alert(error));
   }
 
   return (
@@ -65,7 +66,7 @@ export default function Contact() {
         </div>
         {/* TODO: add validation to this form */}
         <form
-          netlify
+          netlify // todo what is this?
           onSubmit={(e) => handleSubmit(e)}
           name="contact"
           className="flex flex-col w-full mt-8 lg:w-1/3 md:w-1/2 md:ml-auto md:py-8 md:mt-0">

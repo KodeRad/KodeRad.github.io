@@ -39,7 +39,14 @@ export const projects = [
   },
 ];
 
-export const skills = ['react', 'java', 'javascript', 'docker', 'html', 'css'];
+export const skills = [
+  'JAVA',
+  'REACT',
+  'JAVASCRIPT',
+  'DOCKER',
+  'REST API',
+  'CSS',
+];
 
 export const testimonials = [
   {

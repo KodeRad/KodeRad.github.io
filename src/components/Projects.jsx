@@ -1,7 +1,6 @@
 // src/components/Projects.js
 
 import { CodeIcon } from '@heroicons/react/solid';
-import React from 'react';
 import { projects } from '../data/data';
 
 export default function Projects() {
