@@ -10,22 +10,19 @@ export const projects = [
     link: 'https://koderad.github.io/',
   },
   {
-    title: 'React Tracks',
-    subtitle: 'React and Python',
+    title: 'Dodone - todo list - frontend',
+    subtitle: 'React + Material-UI',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?',
-    image:
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP._6DPkK3D9UpQHgF-2zZRIAAAAA%26pid%3DApi&f=1&ipt=51acc5256916f2fc7be8a0fd5e9482c25ccb9490e268c55d5aabc87fd0322017&ipo=images',
-    link: 'https://reedbarger.com',
+      'A simple Todo List application built with React, Vite, and Material-UI.',
+    image: 'src/assets/dodone.png',
+    link: 'https://github.com/KodeRad/dodone-front',
   },
   {
-    title: 'DevChat',
-    subtitle: 'React and Firebase',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?',
-    image:
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.NpOFFI3zksbDrvBEJbs0GgAAAA%26pid%3DApi&f=1&ipt=f853199ae0673546371a680dc413431b070b13105ff8fce3589b684e82144971&ipo=images',
-    link: 'https://jsbootcamp.com',
+    title: 'Dodone - todo list - backend',
+    subtitle: 'Java + Spring Boot + mySQL',
+    description: 'Spring Boot Rest API service',
+    image: 'src/assets/dodone-back.png',
+    link: 'https://github.com/KodeRad/dodone-back',
   },
   {
     title: 'Epic Todo App',
