@@ -2,13 +2,12 @@
 
 export const projects = [
   {
-    title: 'React Reserve',
-    subtitle: 'MERN Stack',
+    title: 'My portfolio website',
+    subtitle: 'Vanilla JS',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?',
-    image:
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.5_tuR5G6F3h0GhZeTB9GQAAAAA%26pid%3DApi&f=1&ipt=41b3f875f9a3455f6e6fc1f737027f57916b958425ee5221359a8bcc1067ca46&ipo=images',
-    link: 'https://reactbootcamp.com',
+      'The first page that I have created in my career. I thought I would become a Frontend Dev, but it turned out I am coding mostly Java now.',
+    image: '/src/assets/my-portfolio.png',
+    link: 'https://koderad.github.io/',
   },
   {
     title: 'React Tracks',

@@ -10,7 +10,7 @@ export default function Projects() {
         <div className="flex flex-col w-full mb-20">
           <CodeIcon className="inline-block w-10 mx-auto mb-4" />
           <h1 className="mb-4 text-3xl font-medium text-white sm:text-4xl title-font">
-            Apps I've Built
+            Apps I&apos;ve Built
           </h1>
           <p className="mx-auto text-base leading-relaxed lg:w-2/3">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
