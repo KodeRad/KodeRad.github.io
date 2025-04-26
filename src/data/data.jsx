@@ -6,7 +6,7 @@ export const projects = [
         subtitle: 'Vanilla JS',
         description:
             'The first page that I have created in my career. I thought I would become a Frontend Dev, but it turned out I am coding mostly Java now.',
-        image: '/src/assets/my-portfolio.png',
+        image: 'https://i.postimg.cc/Kjj2MxGN/my-portfolio.png',
         link: 'https://koderad.github.io/old-portfolio-site/',
     },
     {
@@ -14,14 +14,14 @@ export const projects = [
         subtitle: 'React + Material-UI',
         description:
             'A simple Todo List application built with React, Vite, and Material-UI.',
-        image: 'src/assets/dodone.png',
+        image: 'https://i.postimg.cc/N08BhdC1/dodone.png',
         link: 'https://github.com/KodeRad/dodone-front',
     },
     {
         title: 'Dodone - todo list - backend',
         subtitle: 'Java + Spring Boot + mySQL',
         description: 'Spring Boot Rest API service',
-        image: 'src/assets/dodone-back.png',
+        image: 'https://i.postimg.cc/ZKgT6Byy/dodone-back.png',
         link: 'https://github.com/KodeRad/dodone-back',
     },
     {
