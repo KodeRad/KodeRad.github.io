@@ -7,7 +7,7 @@ export const projects = [
         description:
             'The first porfolio website that I have created in my career.',
         image: 'https://i.postimg.cc/Kjj2MxGN/my-portfolio.png',
-        link: 'https://koderad.github.io/old-portfolio-site/',
+        link: 'https://old-portfolio-koderad.netlify.app/',
     },
     {
         title: 'Dodone - todo list - frontend',
@@ -37,7 +37,7 @@ export const projects = [
 
 export const skills = [
     'JAVA',
-    'REACT',
+    'JUNIT',
     'JAVASCRIPT',
     'DOCKER',
     'REST API',
