@@ -5,7 +5,7 @@ export const projects = [
         title: 'My portfolio website',
         subtitle: 'Vanilla JS',
         description:
-            'The first page that I have created in my career. I thought I would become a Frontend Dev, but it turned out I am coding mostly Java now.',
+            'The first porfolio website that I have created in my career.',
         image: 'https://i.postimg.cc/Kjj2MxGN/my-portfolio.png',
         link: 'https://koderad.github.io/old-portfolio-site/',
     },

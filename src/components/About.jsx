@@ -12,9 +12,8 @@ export default function About() {
                         <br className="hidden lg:inline-block"/>I love to learn new things.
                     </h1>
                     <p className="mb-8 leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                        laborum quasi, incidunt dolore iste nostrum cupiditate voluptas?
-                        Laborum, voluptas natus?
+                        I started coding with JavaScript, shifted to Java in my first job,
+                        and now I'm back to JavaScript — combining my experience with my original passion.
                     </p>
                     <div className="flex justify-center">
                         <a
